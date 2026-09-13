@@ -247,64 +247,27 @@ ul { list-style: none; margin: 0; padding: 0; }
   flex-direction: column;
   transition: transform 0.22s ease, border-color 0.22s ease;
 }
-.cert-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-sage);
-}
+.cert-card:hover { transform: translateY(-4px); border-color: var(--color-sage); }
 
 .cert-badge-wrap {
   margin-bottom: 26px;
   display: flex;
-  height: 140px;
+  height: 80px;
   align-items: center;
   justify-content: flex-start;
 }
 
-/* Image Placeholder Fills */
-.img-ph {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 20px;
-}
-.img-ph i, .img-ph svg { opacity: 0.4; flex-shrink: 0; }
+.img-ph { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; text-align:center; padding:20px; }
+.img-ph i, .img-ph svg { opacity:0.4; flex-shrink:0; }
+.img-ph--neutral { background:linear-gradient(155deg,#F5F7F3 0%,#E2E8DE 100%); color:#4E6B45; }
+.img-ph--oeko { background:linear-gradient(155deg,#F8F6F0 0%,#E9E4D4 100%); color:#6E6852; }
+.img-ph--higg { background:linear-gradient(155deg,#EEF4F0 0%,#D4E3D8 100%); color:#385E46; }
+.img-ph--relan { background:linear-gradient(155deg,#F4F6F9 0%,#D8E0E8 100%); color:#3A5570; }
+.img-ph--cu { background:linear-gradient(155deg,#F3F5F1 0%,#DAE2D6 100%); color:#486142; }
+.img-ph-label-main { font-size:0.74rem; letter-spacing:0.1em; font-weight:600; }
+.img-ph-subtext { font-size:0.64rem; letter-spacing:0.06em; opacity:0.75; font-weight:500; text-transform:none; }
 
-.img-ph--neutral { background: linear-gradient(155deg, #F5F7F3 0%, #E2E8DE 100%); color: #4E6B45; }
-.img-ph--oeko    { background: linear-gradient(155deg, #F8F6F0 0%, #E9E4D4 100%); color: #6E6852; }
-.img-ph--higg    { background: linear-gradient(155deg, #EEF4F0 0%, #D4E3D8 100%); color: #385E46; }
-.img-ph--relan   { background: linear-gradient(155deg, #F4F6F9 0%, #D8E0E8 100%); color: #3A5570; }
-.img-ph--cu      { background: linear-gradient(155deg, #F3F5F1 0%, #DAE2D6 100%); color: #486142; }
-
-.img-ph-label-main {
-  font-size: 0.74rem;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-.img-ph-subtext {
-  font-size: 0.64rem;
-  letter-spacing: 0.06em;
-  opacity: 0.75;
-  font-weight: 500;
-  text-transform: none;
-}
-
-.cert-card-heading {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.35rem;
-  color: var(--color-ink);
-  line-height: 1.25;
-  margin-bottom: 14px;
-}
+.cert-card-heading { font-family:var(--font-display); font-weight:400; font-size:1.1rem; color:var(--color-ink); line-height:1.25; margin-bottom:14px; }
 
 .cert-card-caption {
   font-size: 0.92rem;
@@ -555,6 +518,17 @@ ul { list-style: none; margin: 0; padding: 0; }
 
   .footer-grid { flex-direction: column; gap: 36px; } .footer-lists-col { flex-direction: column; gap: 36px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  /* USER REQUESTED MOBILE OVERRIDES */
+  .hero-heading, .about-hero-heading, .cap-hero-heading, .fabrics-hero-heading, .cert-hero-heading, .certs-intro-heading { font-size: 36px !important; }
+  .section-heading, .story-heading, h2 { font-size: 24px !important; }
+  .stat-number { font-size: 24px !important; }
+  p, .hero-sub, .story-body, .fabrics-subtext, .capability-desc, .approach-desc, .pillar-desc, .cert-card-caption { font-size: 18px !important; }
+  .hero-eyebrow, .section-eyebrow, .story-eyebrow, .about-hero-eyebrow, .cap-hero-eyebrow, .fabrics-hero-eyebrow, .cert-hero-eyebrow { font-size: 12px !important; }
+  .stat-label, .fabric-card-label, .img-ph-label-main { font-size: 14px !important; }
+  .footer-brand-desc, .footer-copy, .footer-col-heading, .footer-contact-item, .footer-contact-label, .footer-links a { font-size: 14px !important; }
+  .main-nav ul li a { font-size: 14px !important; }
+  a[class*="btn-"], button[class*="btn-"] { font-size: 10px !important; }
 }
 
 /* ============================================================
@@ -617,7 +591,6 @@ ul { list-style: none; margin: 0; padding: 0; }
     <div class="cert-hero-body">
       <p class="cert-hero-eyebrow">Certifications</p>
       <h1 class="cert-hero-heading">Verified standards.<br><span class="text-sage-pale">Globally accredited.</span></h1>
-      <p class="cert-hero-sub">Every claim we make about sustainability, chemical safety, and ethical production is backed by rigorous, independent third-party certifications and verified audit frameworks.</p>
     </div>
   </section>
 
@@ -638,7 +611,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 1. Global Recycled Standard (GRS) -->
         <article class="cert-card" aria-labelledby="cert-grs-title">
           <div class="cert-badge-wrap">
-            <img src="grs.png" alt="Global Recycled Standard (GRS) certification seal" style="max-width:100%;max-height:140px;object-fit:contain;" />
+            <img src="grs.png" alt="Global Recycled Standard (GRS) certification seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-grs-title">Global Recycled Standard (GRS)</h3>
           <p class="cert-card-caption">All Aayushi Fab facilities are GRS certified, underpinning our sustainable recycled polyester fabric production and preferred-buyer status for certified recycled yarns.</p>
@@ -647,7 +620,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 2. OEKO-TEX Standard 100 -->
         <article class="cert-card" aria-labelledby="cert-oeko-title">
           <div class="cert-badge-wrap">
-            <img src="oeko-tex.png" alt="OEKO-TEX Standard 100 certificate badge" style="max-width:100%;max-height:140px;object-fit:contain;" />
+            <img src="oeko-tex.png" alt="OEKO-TEX Standard 100 certificate badge" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-oeko-title">OEKO-TEX&reg; Standard 100</h3>
           <p class="cert-card-caption">Certificate no. 20.HIN.22445 HOHENSTEIN HTTI. Rigorously tested to ensure all manufactured fabrics are free from harmful chemical substances and ecologically safe.</p>
@@ -656,7 +629,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 3. Higg Index FSLM -->
         <article class="cert-card" aria-labelledby="cert-higg-title">
           <div class="cert-badge-wrap">
-            <img src="higg index.png" alt="Higg Facility Social & Labor Module verified assessment seal" style="max-width:100%;max-height:140px;object-fit:contain;" />
+            <img src="higg index.png" alt="Higg Facility Social & Labor Module verified assessment seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-higg-title">Higg Facility Social &amp; Labor Module</h3>
           <div class="cert-caption-container">
@@ -668,7 +641,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 4. R|Elan HEP Partner -->
         <article class="cert-card" aria-labelledby="cert-relan-title">
           <div class="cert-badge-wrap">
-            <img src="Relan.png" alt="R|Elan Hub Excellence Program Partner badge" style="max-width:100%;max-height:140px;object-fit:contain;" />
+            <img src="Relan.png" alt="R|Elan Hub Excellence Program Partner badge" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-relan-title">R|Elan&trade; HEP Partner</h3>
           <p class="cert-card-caption">Selected in 2017 as an authorized Hub Excellence Program (HEP) Partner for Reliance Industries' R|Elan high-performance yarn range (&ldquo;Fabric 2.0: The Future of Fabrics&rdquo;).</p>
@@ -677,7 +650,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 5. Certified & Audited by Control Union -->
         <article class="cert-card" aria-labelledby="cert-cu-title">
           <div class="cert-badge-wrap">
-            <img src="control union.png" alt="Control Union audit and certification seal" style="max-width:100%;max-height:140px;object-fit:contain;" />
+            <img src="control union.png" alt="Control Union audit and certification seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-cu-title">Certified &amp; Audited by Control Union</h3>
           <p class="cert-card-caption">Independently audited and certified by Control Union for supply chain integrity, material traceability, and continuous environmental management compliance.</p>
