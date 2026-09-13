@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Featured Fabrics &mdash; Aayushi Fab</title>
+<meta name="description" content="Explore our extensive collection of sustainable polyester fabrics &mdash; solids, heathers, chambrays, dobbies, specialty weaves, and print bases manufactured in Surat, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+
+/* ============================================================
+   DESIGN TOKENS  (identical to index.html & design.md)
+   ============================================================ */
+:root {
+  --color-bg:          #FFFFFF;
+  --color-bg-soft:     #F1F5EE;
+  --color-sage:        #6F8F63;
+  --color-sage-deep:   #4E6B45;
+  --color-sage-pale:   #DCE7D6;
+  --color-ink:         #1C2420;
+  --color-ink-soft:    #4A544C;
+  --color-line:        #D8E2D2;
+  --color-stats-bg:    #3B5434;
+  --color-footer-bg:   #1C2A18;
+
+  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --nav-height:     72px;
+  --max-width:      1440px;
+  --container-pad:  52px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, p { margin: 0; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--color-ink); color: #fff;
+  padding: 12px 20px; z-index: 1000;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+:focus-visible { outline: 2px solid var(--color-sage-deep); outline-offset: 3px; }
+.text-sage { color: var(--color-sage-deep); }
+
+/* ============================================================
+   SITE HEADER / NAV
+   ============================================================ */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-height); display: flex; align-items: center;
+  background: #fff; border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+.site-header.is-scrolled { border-bottom-color: var(--color-line); }
+.header-inner {
+  width: 100%; max-width: var(--max-width);
+  margin: 0 auto; padding: 0 var(--container-pad);
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 20px;
+}
+.wordmark {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 1.05rem; letter-spacing: 0.07em;
+  color: var(--color-ink); white-space: nowrap; flex-shrink: 0;
+}
+.main-nav ul { display: flex; gap: 26px; align-items: center; }
+.main-nav a {
+  font-size: 0.83rem; font-weight: 500;
+  color: var(--color-ink-soft);
+  padding: 6px 0; position: relative;
+  white-space: nowrap; transition: color 0.2s ease;
+}
+.main-nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--color-sage-deep);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.main-nav a:hover { color: var(--color-ink); }
+.main-nav a:hover::after,
+.main-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.main-nav a[aria-current="page"] { color: var(--color-ink); }
+.nav-mobile-cta { display: none; }
+.btn-get-in-touch {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--color-ink); border: 1.5px solid var(--color-ink);
+  border-radius: 999px; padding: 9px 22px;
+  white-space: nowrap; flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-get-in-touch:hover { background: var(--color-ink); color: #fff; }
+.nav-toggle {
+  display: none; flex-direction: column;
+  justify-content: center; gap: 5px;
+  width: 34px; height: 34px;
+  background: none; border: none; cursor: pointer; padding: 0;
+}
+.nav-toggle span {
+  display: block; height: 1.5px; width: 100%;
+  background: var(--color-ink);
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+/* ============================================================
+   FABRICS HERO
+   ============================================================ */
+.fabrics-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.fabrics-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fabrics-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fabrics-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.fabrics-hero-body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 72px) var(--container-pad) 80px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fabrics-hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: 16px;
+}
+
+.fabrics-hero-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 4.2vw, 52px);
+  line-height: 1.16;
+  color: #fff;
+  letter-spacing: -0.01em;
+  max-width: 820px;
+  margin: 0 auto 20px;
+}
+
+.fabrics-hero-sub {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   CATEGORY FILTER BAR / ANCHOR NAV
+   ============================================================ */
+.category-nav-bar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-line);
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 50;
+}
+.category-nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px var(--container-pad);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.category-nav-link {
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.category-nav-link:hover,
+.category-nav-link.is-active {
+  color: var(--color-ink);
+  background: var(--color-bg-soft);
+  border-color: var(--color-line);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FABRIC CATEGORY SECTIONS
+   ============================================================ */
+.category-section {
+  padding: 88px 0 96px;
+  border-bottom: 1px solid var(--color-line);
+  scroll-margin-top: calc(var(--nav-height) + 65px);
+}
+.category-section:last-of-type {
+  border-bottom: none;
+}
+.category-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+.category-header {
+  margin-bottom: 44px;
+}
+.category-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage-deep);
+  margin-bottom: 12px;
+}
+.category-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.category-subtext {
+  font-size: 0.94rem;
+  color: var(--color-ink-soft);
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+/* ============================================================
+   FABRIC SWATCH COMPONENT (Verbatim from index.html)
+   ============================================================ */
+.fabrics-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.fabric-card {
+  display: block;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Fabric swatch — colour fill container */
+.fabric-ph {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s ease;
+}
+
+/* Pinking-shear border overlay — exact jaincord.com technique */
+.zigzag-overlay {
+  border: 15px solid var(--color-bg);
+  border-image-source: url(zigzag.png);
+  border-image-slice: 80 80;
+  border-image-repeat: round;
+  background: transparent;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.fabric-card:hover .fabric-ph {
+  transform: translateY(-6px);
+}
+
+/* Base Swatch Fill Colours (from index.html) */
+.fp--solids     { background: linear-gradient(155deg, #F5F0EA 0%, #E0D4C4 100%); }
+.fp--heathers   { background: linear-gradient(155deg, #EDD5D0 0%, #D4A8A0 100%); }
+.fp--chambrays  { background: linear-gradient(155deg, #C6D8EA 0%, #9CBBD6 100%); }
+.fp--dobbies    { background: linear-gradient(155deg, #DDDAD5 0%, #C4C0BA 100%); }
+.fp--specialty  { background: linear-gradient(155deg, #C2CEBC 0%, #8AAA84 100%); }
+.fp--printbases { background: linear-gradient(155deg, #2E3C50 0%, #1A2535 100%); }
+
+/* Solids Variations */
+.fp--solid-cream    { background: linear-gradient(155deg, #F9F6F0 0%, #E8DFC8 100%); }
+.fp--solid-sand     { background: linear-gradient(155deg, #F2ECE1 0%, #DFD5C4 100%); }
+.fp--solid-taupe    { background: linear-gradient(155deg, #E5DDD3 0%, #C9BEB0 100%); }
+.fp--solid-sage     { background: linear-gradient(155deg, #DCE5D8 0%, #B8C7B2 100%); }
+.fp--solid-olive    { background: linear-gradient(155deg, #CCD5BE 0%, #A8B394 100%); }
+.fp--solid-charcoal { background: linear-gradient(155deg, #3A4540 0%, #222C27 100%); }
+
+/* Heathers Variations */
+.fp--heather-rose     { background: linear-gradient(155deg, #EDD5D0 0%, #D4A8A0 100%); }
+.fp--heather-grey     { background: linear-gradient(155deg, #E2E2E0 0%, #C3C3BF 100%); }
+.fp--heather-oat      { background: linear-gradient(155deg, #EBE4D8 0%, #D1C5B2 100%); }
+.fp--heather-sage     { background: linear-gradient(155deg, #D4DFD0 0%, #ABC0A4 100%); }
+.fp--heather-charcoal { background: linear-gradient(155deg, #4F5552 0%, #323835 100%); }
+.fp--heather-clay     { background: linear-gradient(155deg, #DFCECE 0%, #BA9E9E 100%); }
+
+/* Chambrays Variations */
+.fp--chambray-sky    { background: linear-gradient(155deg, #C6D8EA 0%, #9CBBD6 100%); }
+.fp--chambray-denim  { background: linear-gradient(155deg, #ADC5DB 0%, #7B9BB8 100%); }
+.fp--chambray-slate  { background: linear-gradient(155deg, #B8C4CC 0%, #8C9CA6 100%); }
+.fp--chambray-sage   { background: linear-gradient(155deg, #C2D4C6 0%, #98B3A0 100%); }
+.fp--chambray-dusk   { background: linear-gradient(155deg, #A2B0BD 0%, #6E8090 100%); }
+.fp--chambray-indigo { background: linear-gradient(155deg, #3F5268 0%, #253448 100%); }
+
+/* Dobbies Variations */
+.fp--dobby-pearl  { background: linear-gradient(155deg, #F3F1EC 0%, #DDD9D0 100%); }
+.fp--dobby-greige { background: linear-gradient(155deg, #E4E1DB 0%, #CAC5BC 100%); }
+.fp--dobby-fog    { background: linear-gradient(155deg, #D8DCDA 0%, #BCC3C0 100%); }
+.fp--dobby-lichen { background: linear-gradient(155deg, #D0D8C8 0%, #B0BC9E 100%); }
+.fp--dobby-bark   { background: linear-gradient(155deg, #C5BCB2 0%, #9D9285 100%); }
+.fp--dobby-iron   { background: linear-gradient(155deg, #535955 0%, #363B38 100%); }
+
+/* Specialty Weaves Variations */
+.fp--spec-moss   { background: linear-gradient(155deg, #C2CEBC 0%, #8AAA84 100%); }
+.fp--spec-bamboo { background: linear-gradient(155deg, #DCE3CA 0%, #B4BF98 100%); }
+.fp--spec-stone  { background: linear-gradient(155deg, #D9D7D2 0%, #B8B5AE 100%); }
+.fp--spec-forest { background: linear-gradient(155deg, #52684C 0%, #33442F 100%); }
+.fp--spec-cedar  { background: linear-gradient(155deg, #CBBFB5 0%, #A49385 100%); }
+.fp--spec-night  { background: linear-gradient(155deg, #2D3730 0%, #171E19 100%); }
+
+/* Print Bases Variations */
+.fp--pb-satin     { background: linear-gradient(155deg, #FAF8F5 0%, #ECE4D8 100%); }
+.fp--pb-chiffon   { background: linear-gradient(155deg, #EFECE6 0%, #D8D2C7 100%); }
+.fp--pb-crepe     { background: linear-gradient(155deg, #E2DDD5 0%, #C4BDB0 100%); }
+.fp--pb-habutai   { background: linear-gradient(155deg, #DDE3DA 0%, #B8C4B4 100%); }
+.fp--pb-georgette { background: linear-gradient(155deg, #D2D7D0 0%, #A9B2A6 100%); }
+.fp--pb-twill     { background: linear-gradient(155deg, #2E3C50 0%, #1A2535 100%); }
+
+.fabric-card-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+}
+
+.fabric-card-link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+.fabric-card:hover .fabric-card-link { color: var(--color-sage-deep); }
+.fabric-card-link svg { transition: transform 0.2s ease; flex-shrink: 0; }
+.fabric-card:hover .fabric-card-link svg { transform: translateX(3px); }
+
+/* ============================================================
+   CLOSING INQUIRY CTA SECTION (Dark Green Banner)
+   ============================================================ */
+.fabrics-inquiry {
+  padding: 96px 0 104px;
+  background: var(--color-stats-bg);
+  text-align: center;
+  color: #fff;
+}
+.fabrics-inquiry-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+.fabrics-inquiry-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 14px;
+}
+.fabrics-inquiry-heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  max-width: 680px;
+  margin: 0 auto 16px;
+}
+.fabrics-inquiry-sub {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+.btn-inquiry-solid {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: #fff;
+  border: 1.5px solid #fff;
+  border-radius: 999px;
+  padding: 13px 32px;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+.btn-inquiry-solid:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* ============================================================
+   SITE FOOTER (identical to index.html & about.html)
+   ============================================================ */
+.site-footer { background: var(--color-footer-bg); padding: 84px 0 0; }
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad) 68px;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.footer-brand-col {
+  max-width: 320px;
+}
+
+.footer-lists-col {
+  display: flex;
+  gap: 72px;
+}
+.footer-brand-name {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 1.05rem; letter-spacing: 0.07em;
+  color: #fff; margin-bottom: 14px;
+}
+.footer-brand-desc {
+  font-size: 0.85rem; color: rgba(255,255,255,0.42);
+  line-height: 1.75; max-width: 260px; margin-bottom: 28px;
+}
+.footer-socials { display: flex; gap: 14px; }
+.footer-social-link {
+  display: inline-flex; width: 34px; height: 34px;
+  align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 50%;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer-social-link:hover { color: #fff; border-color: rgba(255,255,255,0.55); }
+.footer-col-heading {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 22px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.5); transition: color 0.2s ease; }
+.footer-links a:hover { color: rgba(255,255,255,0.9); }
+.footer-links a.footer-link-highlight { color: rgba(255,255,255,0.68); font-weight: 600; }
+.footer-links a.footer-link-highlight:hover { color: #fff; }
+.footer-contact-block { display: flex; flex-direction: column; gap: 14px; }
+.footer-contact-item { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+.footer-contact-label {
+  display: block; font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 5px;
+}
+.footer-contact-item a { color: rgba(255,255,255,0.68); transition: color 0.2s ease; }
+.footer-contact-item a:hover { color: #fff; }
+.footer-bottom-wrap { border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-bottom {
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 22px var(--container-pad);
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.footer-copy { font-size: 0.74rem; color: rgba(255,255,255,0.3); }
+.footer-legal { display: flex; gap: 22px; }
+.footer-legal a { font-size: 0.74rem; color: rgba(255,255,255,0.3); transition: color 0.2s ease; }
+.footer-legal a:hover { color: rgba(255,255,255,0.65); }
+
+/* ============================================================
+   RESPONSIVE — 1100px
+   ============================================================ */
+@media (max-width: 1100px) {
+  :root { --container-pad: 36px; }
+  .main-nav ul { gap: 18px; }
+  .fabrics-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .footer-grid {
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 900px
+   ============================================================ */
+@media (max-width: 900px) {
+  .category-section { padding: 72px 0 80px; }
+  .fabrics-inquiry { padding: 72px 0 80px; }
+  .fabrics-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 760px (mobile)
+   ============================================================ */
+@media (max-width: 760px) {
+  :root { --container-pad: 24px; }
+
+  .main-nav ul {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    border-bottom: 1px solid var(--color-line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 99;
+  }
+  .main-nav.is-open ul { max-height: 560px; }
+  .main-nav ul li { border-top: 1px solid var(--color-line); width: 100%; }
+  .main-nav ul li a { display: flex; align-items: center; justify-content: flex-start; padding: 15px 28px; min-height: 48px; text-align: left; }
+  .nav-toggle { display: flex; }
+  .header-inner > .btn-get-in-touch { display: none; }
+
+  .nav-mobile-cta {
+    display: block;
+    padding: 16px 24px 20px;
+    border-top: 1px solid var(--color-line);
+  }
+  .nav-mobile-cta a.btn-nav-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    border: 1.5px solid var(--color-ink);
+    border-radius: 999px;
+    padding: 11px 24px;
+    text-align: center;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .nav-mobile-cta a.btn-nav-mobile:hover {
+    background: var(--color-ink);
+    color: #fff;
+  }
+
+  .page-banner { padding: 100px 0 52px; }
+  .category-nav-bar { top: var(--nav-height); }
+  .category-nav-inner {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 8px;
+  }
+  .category-nav-inner::-webkit-scrollbar { display: none; }
+  .category-nav-link { white-space: nowrap; flex-shrink: 0; min-height: 38px; display: inline-flex; align-items: center; }
+
+  .category-section { padding: 56px 0 64px; }
+  .category-header { margin-bottom: 32px; }
+  .fabrics-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .fabrics-inquiry { padding: 64px 0 72px; }
+
+  .footer-grid { flex-direction: column; gap: 36px; } .footer-lists-col { flex-direction: column; gap: 36px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 500px
+   ============================================================ */
+@media (max-width: 500px) {
+  :root { --container-pad: 16px; }
+
+  .page-banner { padding: 90px 0 44px; }
+  .category-section { padding: 44px 0 52px; }
+  .category-header { margin-bottom: 24px; }
+  .fabrics-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .category-nav-link { font-size: 0.7rem; padding: 6px 12px; }
+  .fabrics-inquiry { padding: 52px 0 60px; }
+  .btn-inquiry-solid { width: 100%; text-align: center; }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fabric-ph,
+  .fabric-card:hover .fabric-ph { transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- HEADER (verbatim — aria-current on Featured Fabrics) -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="wordmark" aria-label="Aayushi Fab &mdash; home">AAYUSHI&nbsp;FAB</a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" id="nav-toggle">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="fabrics.html" aria-current="page">Featured Fabrics</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li class="nav-mobile-cta"><a href="contact.html" class="btn-nav-mobile">Get in Touch</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="btn-get-in-touch" id="btn-get-in-touch">Get in Touch</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- PAGE BANNER / INTRO BAND -->
+  <section class="fabrics-hero" aria-label="Featured Fabrics Overview">
+    <div class="fabrics-hero-media">
+      <img src="faeatured-fabrics-hero.jpg" alt="Versatile, reliable, sustainable polyester fabrics" width="1600" height="900" />
+      <div class="fabrics-hero-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="fabrics-hero-body">
+      <p class="fabrics-hero-eyebrow">Featured Fabrics</p>
+      <h1 class="fabrics-hero-heading">Versatile. Reliable. <span class="text-sage-pale">Sustainable.</span></h1>
+      <p class="fabrics-hero-sub">A wide range of polyester fabrics crafted for performance and purpose &mdash; from everyday essentials to specialized global fashion applications.</p>
+    </div>
+  </section>
+
+  <!-- QUICK CATEGORY JUMP NAV -->
+  <nav class="category-nav-bar" aria-label="Fabric category quick links">
+    <div class="category-nav-inner">
+      <a href="#solids" class="category-nav-link is-active">Solids</a>
+      <a href="#heathers" class="category-nav-link">Heathers</a>
+      <a href="#chambrays" class="category-nav-link">Chambrays</a>
+      <a href="#dobbies" class="category-nav-link">Dobbies</a>
+      <a href="#specialty" class="category-nav-link">Specialty Weaves</a>
+      <a href="#printbases" class="category-nav-link">Print Bases</a>
+    </div>
+  </nav>
+
+
+  <!-- ==========================================================
+       1. SOLIDS
+       ========================================================== -->
+  <section class="category-section" id="solids" aria-labelledby="cat-solids-title">
+    <div class="category-inner">
+      <div class="category-header">
+        <p class="category-eyebrow">Core Collection</p>
+        <h2 class="category-heading" id="cat-solids-title">Solids</h2>
+        <p class="category-subtext">Solid-dyed polyester fabrics with uniform color saturation, consistent GSM, and high color-fastness across lightweight and structured weaves.</p>
+      </div>
+
+      <div class="fabrics-grid">
+        <!-- 1 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--solid-cream">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Micro Twill</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 2 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--solid-sand">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Heavy Crepe</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 3 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--solid-taupe">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Moss Crepe</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 4 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--solid-sage">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Poly Poplin</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 5 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--solid-olive">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Poly Georgette</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 6 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--solid-charcoal">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Structured Twill</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       2. HEATHERS
+       ========================================================== -->
+  <section class="category-section" id="heathers" aria-labelledby="cat-heathers-title">
+    <div class="category-inner">
+      <div class="category-header">
+        <p class="category-eyebrow">M&eacute;lange &amp; Tone</p>
+        <h2 class="category-heading" id="cat-heathers-title">Heathers</h2>
+        <p class="category-subtext">Two-tone and heathered textures made with specialized dope-dyed filaments and blended yarns for a rich, visual depth.</p>
+      </div>
+
+      <div class="fabrics-grid">
+        <!-- 1 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--heather-rose">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Dusty Rose Heather</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 2 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--heather-grey">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">M&eacute;lange Weave</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 3 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--heather-oat">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Oat Heather</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 4 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--heather-sage">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Sage Heather</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 5 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--heather-clay">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Clay M&eacute;lange</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 6 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--heather-charcoal">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Charcoal Slub</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       3. CHAMBRAYS
+       ========================================================== -->
+  <section class="category-section" id="chambrays" aria-labelledby="cat-chambrays-title">
+    <div class="category-inner">
+      <div class="category-header">
+        <p class="category-eyebrow">Yarn-Dyed Effect</p>
+        <h2 class="category-heading" id="cat-chambrays-title">Chambrays</h2>
+        <p class="category-subtext">Woven with contrasting dyed warp and white/neutral weft yarns, creating a subtle cross-dyed chambray luster with easy draping.</p>
+      </div>
+
+      <div class="fabrics-grid">
+        <!-- 1 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--chambray-sky">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Sky Chambray</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 2 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--chambray-denim">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Denim Chambray</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 3 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--chambray-slate">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Slate Chambray</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 4 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--chambray-sage">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Sage Chambray</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 5 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--chambray-dusk">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Dusk Chambray</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 6 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--chambray-indigo">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Midnight Chambray</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       4. DOBBIES
+       ========================================================== -->
+  <section class="category-section" id="dobbies" aria-labelledby="cat-dobbies-title">
+    <div class="category-inner">
+      <div class="category-header">
+        <p class="category-eyebrow">Geometric &amp; Micro-Patterns</p>
+        <h2 class="category-heading" id="cat-dobbies-title">Dobbies</h2>
+        <p class="category-subtext">Intricate dobby-loom geometric textures including dots, checks, waffles, and micro-structures that elevate essential garments.</p>
+      </div>
+
+      <div class="fabrics-grid">
+        <!-- 1 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--dobby-pearl">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Dobby Dot</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 2 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--dobby-greige">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Diamond Weave</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 3 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--dobby-fog">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Oxford Dobby</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 4 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--dobby-lichen">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Mini Houndstooth</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 5 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--dobby-bark">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Waffle Dobby</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 6 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--dobby-iron">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Pique Texture</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       5. SPECIALTY WEAVES
+       ========================================================== -->
+  <section class="category-section" id="specialty" aria-labelledby="cat-specialty-title">
+    <div class="category-inner">
+      <div class="category-header">
+        <p class="category-eyebrow">Technical &amp; Structured</p>
+        <h2 class="category-heading" id="cat-specialty-title">Specialty Weaves</h2>
+        <p class="category-subtext">Engineered weave constructions including ripstops, jacquards, ottomans, and tactile surfaces designed for outerwear and modern tailoring.</p>
+      </div>
+
+      <div class="fabrics-grid">
+        <!-- 1 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--spec-moss">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Textured Ottoman</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 2 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--spec-bamboo">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Ripstop Poly</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 3 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--spec-stone">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Herringbone Weave</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 4 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--spec-forest">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Satin Back Crepe</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 5 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--spec-cedar">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Basketweave</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 6 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--spec-night">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Slub Jacquard</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       6. PRINT BASES
+       ========================================================== -->
+  <section class="category-section" id="printbases" aria-labelledby="cat-printbases-title">
+    <div class="category-inner">
+      <div class="category-header">
+        <p class="category-eyebrow">Optimized for Printing</p>
+        <h2 class="category-heading" id="cat-printbases-title">Print Bases</h2>
+        <p class="category-subtext">Prepared-for-print (PFP) fabric bases engineered for deep ink absorption, crisp pattern definition, and rich color brilliance across digital printing.</p>
+      </div>
+
+      <div class="fabrics-grid">
+        <!-- 1 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--pb-satin">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Poly Satin Base</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 2 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--pb-chiffon">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Chiffon Base</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 3 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--pb-crepe">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Crepe de Chine</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 4 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--pb-habutai">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Habutai Base</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 5 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--pb-georgette">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Georgette PFP</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <!-- 6 -->
+        <a href="contact.html" class="fabric-card">
+          <div class="fabric-ph fp--pb-twill">
+            <span class="zigzag-overlay" aria-hidden="true"></span>
+          </div>
+          <p class="fabric-card-label">Twill Print Base</p>
+          <span class="fabric-card-link">View Fabrics
+            <svg width="15" height="9" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       CLOSING INQUIRY CTA
+       ========================================================== -->
+  <section class="fabrics-inquiry" aria-labelledby="inquiry-title">
+    <div class="fabrics-inquiry-inner">
+      <p class="fabrics-inquiry-eyebrow">Custom Requirements</p>
+      <h2 class="fabrics-inquiry-heading" id="inquiry-title">Don't see what you need?</h2>
+      <p class="fabrics-inquiry-sub">We engineer bespoke yarn constructions, custom dye shades, and tailored fabric finishes to meet your exact product specifications.</p>
+      <a href="contact.html" class="btn-inquiry-solid">Get in Touch</a>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- FOOTER (verbatim from index.html & about.html) -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-name">AAYUSHI&nbsp;FAB</p>
+      <p class="footer-brand-desc">Driving clean fashion with sustainable polyester fabrics, responsibly manufactured in Surat, India since 1948.</p>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+          <i data-lucide="linkedin" width="15" height="15" stroke-width="1.8"></i>
+        </a>
+        <a href="#" class="footer-social-link" aria-label="Instagram">
+          <i data-lucide="instagram" width="15" height="15" stroke-width="1.8"></i>
+        </a>
+        <a href="mailto:info@aayushifab.com" class="footer-social-link" aria-label="Email">
+          <i data-lucide="mail" width="15" height="15" stroke-width="1.8"></i>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-heading">Quick Links</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="fabrics.html">Featured Fabrics</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-heading">Our Fabrics</p>
+      <ul class="footer-links">
+        <li><a href="fabrics.html#solids">Solids</a></li>
+        <li><a href="fabrics.html#heathers">Heathers</a></li>
+        <li><a href="fabrics.html#chambrays">Chambrays</a></li>
+        <li><a href="fabrics.html#dobbies">Dobbies</a></li>
+        <li><a href="fabrics.html#specialty">Specialty Weaves</a></li>
+        <li><a href="fabrics.html#printbases">Print Bases</a></li>
+        <li><a href="fabrics.html" class="footer-link-highlight">Explore All Fabrics</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-heading">Contact Us</p>
+      <div class="footer-contact-block">
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Address</span>
+          Aayushi Fab<br>[Office Address Placeholder],<br>[City, State &mdash; PIN], India
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Phone</span>
+          <a href="tel:+910000000000">+91 XXXXX XXXXX</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Email</span>
+          <a href="mailto:info@aayushifab.com">info@aayushifab.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-wrap">
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Aayushi Fab. All rights reserved.</p>
+      <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+        <p class="footer-copy" style="margin: 0;">Made By <a href="#" style="text-decoration: underline; color: rgba(255,255,255,0.7);">JDDigitalWeb</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+lucide.createIcons();
+
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+const header = document.getElementById('site-header');
+const onScroll = () => { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+/* Mobile nav toggle */
+const navToggle = document.getElementById('nav-toggle');
+const mainNav   = document.querySelector('.main-nav');
+navToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('is-open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+/* Category tabs scrollspy & click active state */
+const catLinks = document.querySelectorAll('.category-nav-link');
+const catSections = document.querySelectorAll('.category-section');
+
+const updateActiveTab = () => {
+  let currentId = '';
+  const scrollPosition = window.scrollY + 180;
+
+  catSections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentId = section.getAttribute('id');
+    }
+  });
+
+  if (currentId) {
+    catLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${currentId}`) {
+        link.classList.add('is-active');
+      } else {
+        link.classList.remove('is-active');
+      }
+    });
+  }
+};
+
+window.addEventListener('scroll', updateActiveTab, { passive: true });
+
+catLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    catLinks.forEach(l => l.classList.remove('is-active'));
+    link.classList.add('is-active');
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+

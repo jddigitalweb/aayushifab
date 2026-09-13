@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About &mdash; Aayushi Fab</title>
+<meta name="description" content="Learn about Aayushi Fab &mdash; a sustainable polyester fabric manufacturer founded in 1948, supplying global fashion brands from Surat, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+
+/* ============================================================
+   DESIGN TOKENS  (identical to index.html)
+   ============================================================ */
+:root {
+  --color-bg:          #FFFFFF;
+  --color-bg-soft:     #F1F5EE;
+  --color-sage:        #6F8F63;
+  --color-sage-deep:   #4E6B45;
+  --color-sage-pale:   #DCE7D6;
+  --color-ink:         #1C2420;
+  --color-ink-soft:    #4A544C;
+  --color-line:        #D8E2D2;
+  --color-stats-bg:    #3B5434;
+  --color-footer-bg:   #1C2A18;
+
+  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --nav-height:     72px;
+  --max-width:      1440px;
+  --container-pad:  52px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, p { margin: 0; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--color-ink); color: #fff;
+  padding: 12px 20px; z-index: 1000;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+:focus-visible { outline: 2px solid var(--color-sage-deep); outline-offset: 3px; }
+.text-sage { color: var(--color-sage-deep); }
+.text-sage-pale { color: var(--color-sage-pale); }
+
+/* ============================================================
+   SITE HEADER / NAV
+   ============================================================ */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-height); display: flex; align-items: center;
+  background: #fff; border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+.site-header.is-scrolled { border-bottom-color: var(--color-line); }
+.header-inner {
+  width: 100%; max-width: var(--max-width);
+  margin: 0 auto; padding: 0 var(--container-pad);
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 20px;
+}
+.wordmark {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 1.05rem; letter-spacing: 0.07em;
+  color: var(--color-ink); white-space: nowrap; flex-shrink: 0;
+}
+.main-nav ul { display: flex; gap: 26px; align-items: center; }
+.main-nav a {
+  font-size: 0.83rem; font-weight: 500;
+  color: var(--color-ink-soft);
+  padding: 6px 0; position: relative;
+  white-space: nowrap; transition: color 0.2s ease;
+}
+.main-nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--color-sage-deep);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.main-nav a:hover { color: var(--color-ink); }
+.main-nav a:hover::after,
+.main-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.main-nav a[aria-current="page"] { color: var(--color-ink); }
+.nav-mobile-cta { display: none; }
+.btn-get-in-touch {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--color-ink); border: 1.5px solid var(--color-ink);
+  border-radius: 999px; padding: 9px 22px;
+  white-space: nowrap; flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-get-in-touch:hover { background: var(--color-ink); color: #fff; }
+.nav-toggle {
+  display: none; flex-direction: column;
+  justify-content: center; gap: 5px;
+  width: 34px; height: 34px;
+  background: none; border: none; cursor: pointer; padding: 0;
+}
+.nav-toggle span {
+  display: block; height: 1.5px; width: 100%;
+  background: var(--color-ink);
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+/* ============================================================
+   SHARED SECTION TOKENS
+   ============================================================ */
+.section-eyebrow {
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-sage-deep); margin-bottom: 14px;
+}
+.section-heading {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  color: var(--color-ink); line-height: 1.18; margin-bottom: 18px;
+}
+.section-sub { font-size: 0.94rem; color: var(--color-ink-soft); line-height: 1.8; }
+.section-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--container-pad); }
+
+.btn-outline-dark {
+  display: inline-block; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--color-ink); border: 1.5px solid var(--color-ink);
+  border-radius: 999px; padding: 12px 28px;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+.btn-outline-dark:hover { background: var(--color-ink); color: #fff; }
+
+/* ============================================================
+   IMAGE PLACEHOLDERS  (same gradient technique as .fabric-ph)
+   ============================================================ */
+.img-ph {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 14px; font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-align: center; padding: 24px;
+}
+.img-ph svg { opacity: 0.32; flex-shrink: 0; }
+.img-ph--sage { background: linear-gradient(155deg, #CED9C9 0%, #A8BCA2 100%); color: #5a7050; }
+.img-ph--warm { background: linear-gradient(155deg, #E8DFD5 0%, #CEC0AE 100%); color: #7a6852; }
+
+/* ============================================================
+   ABOUT HERO
+   ============================================================ */
+.about-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.about-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.about-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.about-hero-body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 72px) var(--container-pad) 80px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: 16px;
+}
+
+.about-hero-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 4.2vw, 52px);
+  line-height: 1.16;
+  color: #fff;
+  letter-spacing: -0.01em;
+  max-width: 820px;
+  margin: 0 auto 20px;
+}
+
+.about-hero-sub {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   OPENING STATEMENT
+   ============================================================ */
+.opening { padding: 100px 0 96px; background: var(--color-bg); text-align: center; }
+.opening-heading {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
+  line-height: 1.2; color: var(--color-ink);
+  letter-spacing: -0.01em; max-width: 860px;
+  margin: 0 auto 22px;
+}
+.opening-sub {
+  font-size: 0.96rem; color: var(--color-ink-soft);
+  line-height: 1.8; max-width: 560px; margin: 0 auto;
+}
+
+/* ============================================================
+   SPLIT LAYOUT
+   ============================================================ */
+.split-section { padding: 100px 0 108px; }
+.split-section--soft { background: var(--color-bg-soft); }
+.split-section--white { background: var(--color-bg); }
+.split-inner {
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 0 var(--container-pad);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 88px; align-items: center;
+}
+.split-img {
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 28px 72px rgba(28,36,32,0.12);
+}
+.split-img--portrait { aspect-ratio: 3 / 4; max-width: 420px; justify-self: end; }
+.split-img--landscape { aspect-ratio: 4 / 3; }
+.split-img--end { justify-self: end; aspect-ratio: 4 / 3; }
+
+.leadership-caption {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--color-ink-soft); opacity: 0.55; margin-top: 28px;
+}
+
+/* Capability tags */
+.scale-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.scale-tag {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--color-sage-deep); background: var(--color-sage-pale);
+  border-radius: 999px; padding: 6px 14px;
+}
+
+/* ============================================================
+   FOCUS PILLARS
+   ============================================================ */
+.focus { padding: 100px 0 108px; background: var(--color-bg-soft); }
+.focus-intro { text-align: center; margin-bottom: 64px; }
+.focus-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; border: 1px solid var(--color-line);
+  border-radius: 16px; overflow: hidden;
+}
+.focus-card { padding: 52px 44px; background: var(--color-bg); }
+.focus-icon {
+  display: inline-flex; width: 52px; height: 52px;
+  align-items: center; justify-content: center;
+  color: var(--color-sage-deep); background: var(--color-sage-pale);
+  border-radius: 12px; margin-bottom: 26px;
+}
+.focus-card-heading {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 1.35rem; color: var(--color-ink);
+  margin-bottom: 14px; line-height: 1.2;
+}
+.focus-card-body { font-size: 0.93rem; color: var(--color-ink-soft); line-height: 1.8; }
+
+/* ============================================================
+   LEGACY STRIP
+   ============================================================ */
+.legacy { background: var(--color-stats-bg); padding: 88px 0; text-align: center; }
+.legacy-label {
+  font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin-bottom: 10px;
+}
+.legacy-number {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  color: #fff; letter-spacing: -0.02em; line-height: 1; margin-bottom: 10px;
+}
+.legacy-body {
+  font-size: 0.94rem; color: rgba(255,255,255,0.6);
+  line-height: 1.75; max-width: 500px; margin: 22px auto 0;
+}
+
+/* ============================================================
+   BUYER LOGOS
+   ============================================================ */
+.buyers { padding: 100px 0 108px; background: #fff; }
+.buyers-intro { text-align: center; margin-bottom: 64px; }
+.buyers-eyebrow {
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-sage-deep); margin-bottom: 14px;
+}
+.buyers-heading {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  color: var(--color-ink); line-height: 1.22;
+  max-width: 600px; margin: 0 auto;
+}
+.buyers-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+}
+.buyers-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: scroll-buyers 40s linear infinite;
+}
+.buyers-track:hover {
+  animation-play-state: paused;
+}
+@keyframes scroll-buyers {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.buyer-logo {
+  display: flex; align-items: center; justify-content: center;
+  width: 200px; min-height: 100px; flex-shrink: 0;
+}
+.buyer-logo img {
+  max-width: 90%;
+  max-height: 65px;
+  object-fit: contain;
+  opacity: 1;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer { background: var(--color-footer-bg); padding: 84px 0 0; }
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad) 68px;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.footer-brand-col {
+  max-width: 320px;
+}
+
+.footer-lists-col {
+  display: flex;
+  gap: 72px;
+}
+.footer-brand-name {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 1.05rem; letter-spacing: 0.07em;
+  color: #fff; margin-bottom: 14px;
+}
+.footer-brand-desc {
+  font-size: 0.85rem; color: rgba(255,255,255,0.42);
+  line-height: 1.75; max-width: 260px; margin-bottom: 28px;
+}
+.footer-socials { display: flex; gap: 14px; }
+.footer-social-link {
+  display: inline-flex; width: 34px; height: 34px;
+  align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 50%;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer-social-link:hover { color: #fff; border-color: rgba(255,255,255,0.55); }
+.footer-col-heading {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 22px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.5); transition: color 0.2s ease; }
+.footer-links a:hover { color: rgba(255,255,255,0.9); }
+.footer-links a.footer-link-highlight { color: rgba(255,255,255,0.68); font-weight: 600; }
+.footer-links a.footer-link-highlight:hover { color: #fff; }
+.footer-contact-block { display: flex; flex-direction: column; gap: 14px; }
+.footer-contact-item { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+.footer-contact-label {
+  display: block; font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 5px;
+}
+.footer-contact-item a { color: rgba(255,255,255,0.68); transition: color 0.2s ease; }
+.footer-contact-item a:hover { color: #fff; }
+.footer-bottom-wrap { border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-bottom {
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 22px var(--container-pad);
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.footer-copy { font-size: 0.74rem; color: rgba(255,255,255,0.3); }
+.footer-legal { display: flex; gap: 22px; }
+.footer-legal a { font-size: 0.74rem; color: rgba(255,255,255,0.3); transition: color 0.2s ease; }
+.footer-legal a:hover { color: rgba(255,255,255,0.65); }
+
+/* ============================================================
+   RESPONSIVE — 1100px
+   ============================================================ */
+@media (max-width: 1100px) {
+  :root { --container-pad: 36px; }
+  .main-nav ul { gap: 18px; }
+  .buyers-grid { grid-template-columns: repeat(4, 1fr); }
+  .buyers-grid-row2 { grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-line); }
+  .footer-grid {
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 900px
+   ============================================================ */
+@media (max-width: 900px) {
+  .split-inner { grid-template-columns: 1fr; gap: 44px; }
+  .split-img--portrait { max-width: 100%; justify-self: auto; order: -1; }
+  .split-img--landscape { max-width: 100%; }
+  .split-img--end { order: -1; }
+
+  .focus-grid { grid-template-columns: 1fr; gap: 0; border-radius: 14px; }
+  .focus-card { padding: 36px 32px; border-bottom: 1px solid var(--color-line); }
+  .focus-card:last-child { border-bottom: none; }
+
+  .split-section { padding: 72px 0 80px; }
+  .opening { padding: 72px 0 80px; }
+  .focus { padding: 72px 0 80px; }
+  .legacy { padding: 64px 0; }
+  .buyers { padding: 72px 0 80px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 760px (mobile)
+   ============================================================ */
+@media (max-width: 760px) {
+  :root { --container-pad: 24px; }
+
+  .main-nav ul {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    border-bottom: 1px solid var(--color-line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 99;
+  }
+  .main-nav.is-open ul { max-height: 560px; }
+  .main-nav ul li { border-top: 1px solid var(--color-line); width: 100%; }
+  .main-nav ul li a { display: flex; align-items: center; justify-content: flex-start; padding: 15px 28px; min-height: 48px; text-align: left; }
+  .nav-toggle { display: flex; }
+  .header-inner > .btn-get-in-touch { display: none; }
+
+  .nav-mobile-cta {
+    display: block;
+    padding: 16px 24px 20px;
+    border-top: 1px solid var(--color-line);
+  }
+  .nav-mobile-cta a.btn-nav-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    border: 1.5px solid var(--color-ink);
+    border-radius: 999px;
+    padding: 11px 24px;
+    text-align: center;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .nav-mobile-cta a.btn-nav-mobile:hover {
+    background: var(--color-ink);
+    color: #fff;
+  }
+
+  .about-hero { min-height: 440px; }
+  .about-hero-body { padding: calc(var(--nav-height) + 40px) var(--container-pad) 56px; }
+  .split-section { padding: 60px 0 68px; }
+  .opening { padding: 60px 0 68px; }
+  .focus { padding: 60px 0 68px; }
+  .legacy { padding: 56px 0; }
+  .buyers { padding: 60px 0 68px; }
+
+  .buyers-grid { grid-template-columns: repeat(3, 1fr); }
+  .buyers-grid-row2 { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-grid { flex-direction: column; gap: 36px; } .footer-lists-col { flex-direction: column; gap: 36px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 500px
+   ============================================================ */
+@media (max-width: 500px) {
+  :root { --container-pad: 16px; }
+
+  .about-hero { min-height: 380px; }
+  .about-hero-body { padding: calc(var(--nav-height) + 28px) var(--container-pad) 44px; }
+  .split-section { padding: 48px 0 56px; }
+  .opening { padding: 48px 0 56px; }
+  .focus { padding: 48px 0 56px; }
+  .legacy { padding: 48px 0; }
+  .buyers { padding: 48px 0 56px; }
+
+  .focus-card { padding: 28px 20px; }
+  .buyers-grid { grid-template-columns: repeat(2, 1fr); }
+  .buyers-grid-row2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- HEADER (verbatim — aria-current on About) -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="wordmark" aria-label="Aayushi Fab &mdash; home">AAYUSHI&nbsp;FAB</a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" id="nav-toggle">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="fabrics.html">Featured Fabrics</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li class="nav-mobile-cta"><a href="contact.html" class="btn-nav-mobile">Get in Touch</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="btn-get-in-touch" id="btn-get-in-touch">Get in Touch</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero" aria-label="About Aayushi Fab">
+    <div class="about-hero-media">
+      <img src="about-us.webp" alt="Aayushi Fab manufacturing facility and team in Surat, India" width="1600" height="900" />
+      <div class="about-hero-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="about-hero-body">
+      <p class="about-hero-eyebrow">About Us</p>
+      <h1 class="about-hero-heading">Fashion-forward fabrics.<br>Built for a <span class="text-sage-pale">better world</span>.</h1>
+      <p class="about-hero-sub">A sustainable polyester fabric manufacturer supplying the global fashion industry &mdash; thoughtfully, responsibly, since 1948.</p>
+    </div>
+  </section>
+
+
+  <!-- OPENING STATEMENT -->
+  <section class="opening" aria-labelledby="opening-heading">
+    <div class="section-inner">
+      <h2 class="opening-heading" id="opening-heading">We build products that let fashion brands move faster, <span class="text-sage">greener</span>, and with greater confidence.</h2>
+      <p class="opening-sub">From yarns to finished fabric &mdash; every process runs in-house at our Surat facility, keeping quality tight and lead times short for buyers worldwide.</p>
+    </div>
+  </section>
+
+
+  <!-- LEADERSHIP -->
+  <section class="split-section split-section--soft" aria-labelledby="leadership-heading">
+    <div class="split-inner">
+      <div>
+        <p class="section-eyebrow">Our Roots</p>
+        <h2 class="section-heading" id="leadership-heading">From Kolkata, 1948.<br>Built on <span class="text-sage">trust</span>.</h2>
+        <p class="section-sub" style="margin-bottom:16px;">What began as Gourishankar Tulsiram Trading Company in Kolkata has grown, under the stewardship of CEO Mr. Ashok Agarwal, into one of India's trusted sustainable polyester fabric manufacturers.</p>
+        <p class="section-sub">His vision &mdash; to marry craftsmanship with conscientious manufacturing &mdash; remains the compass for every decision we make.</p>
+        <p class="leadership-caption">Mr. Ashok Agarwal &mdash; CEO, Aayushi Fab</p>
+      </div>
+      <div class="split-img split-img--portrait">
+        <img src="ceo_sample.jpg" alt="Mr. Ashok Agarwal — CEO, Aayushi Fab" width="420" height="560" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SCALE & OPERATIONS -->
+  <section class="split-section split-section--white" aria-labelledby="scale-heading">
+    <div class="split-inner">
+      <div class="split-img split-img--landscape">
+        <img src="our_scale.jpg" alt="Aayushi Fab factory staff and manufacturing floor" width="800" height="600" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      </div>
+      <div>
+        <p class="section-eyebrow">Our Scale</p>
+        <h2 class="section-heading" id="scale-heading">150+ people.<br>Every process, <span class="text-sage">in-house</span>.</h2>
+        <p class="section-sub" style="max-width:480px;margin-bottom:28px;">Our team of 150+ professionals operates across the full textile value chain &mdash; from texturising yarns and knitting and weaving raw fabric, to digital printing, foil printing, and embroideries &mdash; all under one roof in Surat, India.</p>
+        <div class="scale-tags">
+          <span class="scale-tag">Textured Yarns</span>
+          <span class="scale-tag">Knitting</span>
+          <span class="scale-tag">Weaving</span>
+          <span class="scale-tag">Digital Printing</span>
+          <span class="scale-tag">Foil Printing</span>
+          <span class="scale-tag">Embroideries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- THREE FOCUS PILLARS -->
+  <section class="focus" aria-labelledby="focus-heading">
+    <div class="section-inner">
+      <div class="focus-intro">
+        <p class="section-eyebrow">Our Focus</p>
+        <h2 class="section-heading" id="focus-heading" style="max-width:560px;margin:0 auto 12px;">Three things we will <span class="text-sage">never compromise</span> on.</h2>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="focus-icon">
+            <i data-lucide="leaf" width="22" height="22" stroke-width="1.6"></i>
+          </div>
+          <h3 class="focus-card-heading">Sustainability</h3>
+          <p class="focus-card-body">Our entire manufacturing unit was conceived and built around the goal of green production. Responsible sourcing, reduced waste, and lower carbon outputs aren&rsquo;t add-ons &mdash; they are foundational to how we operate.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon">
+            <i data-lucide="badge-check" width="22" height="22" stroke-width="1.6"></i>
+          </div>
+          <h3 class="focus-card-heading">Quality</h3>
+          <p class="focus-card-body">A strict focus on fabric quality &mdash; tested at every stage &mdash; means on-time, every-time delivery to global buyers. Our standards meet the expectations of the world&rsquo;s most demanding fashion retail groups.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon">
+            <i data-lucide="zap" width="22" height="22" stroke-width="1.6"></i>
+          </div>
+          <h3 class="focus-card-heading">Agility</h3>
+          <p class="focus-card-body">With every textile process handled in-house, we move from concept to finished fabric faster than most. That end-to-end control translates directly into better product development speed for our buyers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAMILY BUSINESS CLOSING -->
+  <section class="split-section split-section--white" aria-labelledby="family-heading">
+    <div class="split-inner">
+      <div>
+        <p class="section-eyebrow">Our Approach</p>
+        <h2 class="section-heading" id="family-heading">Family-run.<br><span class="text-sage">Personally invested</span><br>in every order.</h2>
+        <p class="section-sub" style="margin-bottom:36px;">As a family-run business, we bring a level of personal attention to each customer&rsquo;s textile requirements that larger, impersonal manufacturers simply can&rsquo;t match. Your brief is treated as our brief.</p>
+        <a href="contact.html" class="btn-outline-dark">Start a Conversation</a>
+      </div>
+      <div class="split-img split-img--end">
+        <img src="our-approach.jpg" alt="The Aayushi Fab family and team approach" width="600" height="700" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LEGACY STRIP (echoes stats banner) -->
+  <section class="legacy" aria-label="75 plus years of textile heritage">
+    <div class="section-inner">
+      <p class="legacy-label">Established 1948</p>
+      <p class="legacy-number">75<span style="font-size:0.5em;letter-spacing:0;vertical-align:middle;">+</span></p>
+      <p class="legacy-label" style="margin-top:4px;">Years of textile heritage</p>
+      <p class="legacy-body">From a single trading office in Kolkata to a vertically integrated polyester fabric manufacturer trusted by global fashion groups &mdash; seven decades of experience, and we&rsquo;re still building.</p>
+    </div>
+  </section>
+
+
+  <!-- BUYER LOGOS -->
+  <section class="buyers" aria-labelledby="buyers-heading">
+    <div class="section-inner">
+      <div class="buyers-intro">
+        <p class="buyers-eyebrow">Our Buyers</p>
+        <h2 class="buyers-heading" id="buyers-heading">Brands that have chosen the difference<br>by <span class="text-sage">associating with us</span>.</h2>
+      </div>
+      <div class="buyers-slider">
+        <div class="buyers-track">
+          <!-- First Set -->
+          <div class="buyer-logo"><img src="inditex.png" alt="Inditex" /></div>
+          <div class="buyer-logo"><img src="next.png" alt="Next" /></div>
+          <div class="buyer-logo"><img src="s oliver.svg" alt="S.Oliver" /></div>
+          <div class="buyer-logo"><img src="h&m kids.jpg" alt="H&M Kids" /></div>
+          <div class="buyer-logo"><img src="riverisland.png" alt="River Island" /></div>
+          <div class="buyer-logo"><img src="walmart.webp" alt="Walmart" /></div>
+          <div class="buyer-logo"><img src="new look.png" alt="New Look" /></div>
+          <div class="buyer-logo"><img src="topshop.png" alt="Topshop" /></div>
+          <div class="buyer-logo"><img src="monsoon accessorize.jpg" alt="Monsoon Accessorize" /></div>
+          <div class="buyer-logo"><img src="kmart.webp" alt="Kmart" /></div>
+          <div class="buyer-logo"><img src="vero moda.png" alt="Vero Moda" /></div>
+          <div class="buyer-logo"><img src="target.png" alt="Target" /></div>
+          <div class="buyer-logo"><img src="ca.png" alt="C&A" /></div>
+
+          <!-- Duplicate Set for infinite scroll -->
+          <div class="buyer-logo"><img src="inditex.png" alt="Inditex" /></div>
+          <div class="buyer-logo"><img src="next.png" alt="Next" /></div>
+          <div class="buyer-logo"><img src="s oliver.svg" alt="S.Oliver" /></div>
+          <div class="buyer-logo"><img src="h&m kids.jpg" alt="H&M Kids" /></div>
+          <div class="buyer-logo"><img src="riverisland.png" alt="River Island" /></div>
+          <div class="buyer-logo"><img src="walmart.webp" alt="Walmart" /></div>
+          <div class="buyer-logo"><img src="new look.png" alt="New Look" /></div>
+          <div class="buyer-logo"><img src="topshop.png" alt="Topshop" /></div>
+          <div class="buyer-logo"><img src="monsoon accessorize.jpg" alt="Monsoon Accessorize" /></div>
+          <div class="buyer-logo"><img src="kmart.webp" alt="Kmart" /></div>
+          <div class="buyer-logo"><img src="vero moda.png" alt="Vero Moda" /></div>
+          <div class="buyer-logo"><img src="target.png" alt="Target" /></div>
+          <div class="buyer-logo"><img src="ca.png" alt="C&A" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- FOOTER (verbatim from index.html) -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-name">AAYUSHI&nbsp;FAB</p>
+      <p class="footer-brand-desc">Driving clean fashion with sustainable polyester fabrics, responsibly manufactured in Surat, India since 1948.</p>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+          <i data-lucide="linkedin" width="15" height="15" stroke-width="1.8"></i>
+        </a>
+        <a href="#" class="footer-social-link" aria-label="Instagram">
+          <i data-lucide="instagram" width="15" height="15" stroke-width="1.8"></i>
+        </a>
+        <a href="mailto:info@aayushifab.com" class="footer-social-link" aria-label="Email">
+          <i data-lucide="mail" width="15" height="15" stroke-width="1.8"></i>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-heading">Quick Links</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="fabrics.html">Featured Fabrics</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-heading">Our Fabrics</p>
+      <ul class="footer-links">
+        <li><a href="fabrics.html#solids">Solids</a></li>
+        <li><a href="fabrics.html#heathers">Heathers</a></li>
+        <li><a href="fabrics.html#chambrays">Chambrays</a></li>
+        <li><a href="fabrics.html#dobbies">Dobbies</a></li>
+        <li><a href="fabrics.html#specialty">Specialty Weaves</a></li>
+        <li><a href="fabrics.html#printbases">Print Bases</a></li>
+        <li><a href="fabrics.html" class="footer-link-highlight">Explore All Fabrics</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-heading">Contact Us</p>
+      <div class="footer-contact-block">
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Address</span>
+          Aayushi Fab<br>[Office Address Placeholder],<br>[City, State &mdash; PIN], India
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Phone</span>
+          <a href="tel:+910000000000">+91 XXXXX XXXXX</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Email</span>
+          <a href="mailto:info@aayushifab.com">info@aayushifab.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-wrap">
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Aayushi Fab. All rights reserved.</p>
+      <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+        <p class="footer-copy" style="margin: 0;">Made By <a href="#" style="text-decoration: underline; color: rgba(255,255,255,0.7);">JDDigitalWeb</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+lucide.createIcons();
+
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+const header = document.getElementById('site-header');
+const onScroll = () => { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+const navToggle = document.getElementById('nav-toggle');
+const mainNav   = document.querySelector('.main-nav');
+navToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('is-open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
