@@ -7,7 +7,8 @@
 <meta name="description" content="Aayushi Fab is a sustainable polyester fabric manufacturer based in Surat, India, supplying recycled and conventional fabrics to global fashion brands since 1948.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Work+Sans:wght@400;500;600&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 
 /* ============================================================
@@ -25,7 +26,7 @@
   --color-stats-bg:    #3B5434;
   --color-footer-bg:   #1C2A18;
 
-  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body:    "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --nav-height:     72px;
@@ -203,17 +204,17 @@ ul { list-style: none; margin: 0; padding: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center bottom;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    105deg,
-    rgba(14, 20, 16, 0.76) 0%,
-    rgba(14, 20, 16, 0.50) 55%,
-    rgba(14, 20, 16, 0.22) 100%
+    180deg,
+    rgba(14, 20, 16, 0.62) 0%,
+    rgba(14, 20, 16, 0.54) 50%,
+    rgba(14, 20, 16, 0.74) 100%
   );
 }
 
@@ -222,8 +223,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   content: "";
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 200px;
-  background: linear-gradient(to top, rgba(14,20,16,0.5), transparent);
+  height: 220px;
+  background: linear-gradient(to top, rgba(14,20,16,0.65), transparent);
 }
 
 .hero-body {
@@ -234,6 +235,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 0 auto;
   padding: 100px var(--container-pad) 0;
   color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-eyebrow {
@@ -241,32 +246,37 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 18px;
 }
 
 .hero-heading {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 600;
   font-size: clamp(1.5rem, 5vw, 3.9rem);
   line-height: 1.1;
   color: #fff;
-  max-width: 800px;
+  max-width: 820px;
   margin-bottom: 20px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-sub {
   font-size: 0.93rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
-  max-width: 360px;
+  max-width: 480px;
   margin-bottom: 38px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-ctas {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -382,11 +392,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .fabrics-heading {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: clamp(1.3rem, 3.5vw, 2.7rem);
   color: var(--color-ink);
   line-height: 1.18;
   margin-bottom: 18px;
+  letter-spacing: -0.02em;
 }
 
 .fabrics-subtext {
@@ -424,7 +435,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* Pinking-shear border overlay — exact jaincord.com technique */
 .zigzag-overlay {
   border: 15px solid var(--color-bg);
-  border-image-source: url(zigzag.png);
+  border-image-source: url(assets/images/zigzag.png);
   border-image-slice: 80 80;
   border-image-repeat: round;
   background: transparent;
@@ -438,13 +449,40 @@ ul { list-style: none; margin: 0; padding: 0; }
   transform: translateY(-6px);
 }
 
-/* Swatch fill colours */
-.fp--solids     { background: linear-gradient(155deg, #F5F0EA 0%, #E0D4C4 100%); }
-.fp--heathers   { background: linear-gradient(155deg, #EDD5D0 0%, #D4A8A0 100%); }
-.fp--chambrays  { background: linear-gradient(155deg, #C6D8EA 0%, #9CBBD6 100%); }
-.fp--dobbies    { background: linear-gradient(155deg, #DDDAD5 0%, #C4C0BA 100%); }
-.fp--specialty  { background: linear-gradient(155deg, #C2CEBC 0%, #8AAA84 100%); }
-.fp--printbases { background: linear-gradient(155deg, #2E3C50 0%, #1A2535 100%); }
+/* Swatch fill colours & imagery */
+.fp--solids { 
+  background-image: url('assets/images/swatch-test.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+.fp--heathers { 
+  background-image: url('assets/images/swatch-2.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+.fp--chambrays { 
+  background-image: url('assets/images/swatch-3.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+.fp--dobbies { 
+  background-image: url('assets/images/swatch-4.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+.fp--specialty { 
+  background-image: url('assets/images/swatch-5.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+.fp--printbases { 
+  background: linear-gradient(155deg, #2E3C50 0%, #1A2535 100%); 
+}
 
 .fabric-card-label {
   font-size: 0.7rem;
@@ -488,7 +526,7 @@ ul { list-style: none; margin: 0; padding: 0; }
    OUR STORY — Split Layout
    ============================================================ */
 .story {
-  padding: 112px 0 120px;
+  padding: 112px 0 96px;
   background: var(--color-bg-soft);
 }
 
@@ -496,29 +534,47 @@ ul { list-style: none; margin: 0; padding: 0; }
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--container-pad);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 88px;
-  align-items: center;
 }
 
-.story-eyebrow { margin-bottom: 22px; }
+.story-header-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.story-label-col {
+  padding-top: 8px;
+}
+
+.story-eyebrow {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.story-content-col {
+  max-width: 900px;
+}
 
 .story-heading {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(1.3rem, 3vw, 2.55rem);
-  line-height: 1.18;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.2;
   color: var(--color-ink);
-  margin-bottom: 22px;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
 }
 
 .story-body {
-  font-size: 0.94rem;
+  font-size: 1.05rem;
   color: var(--color-ink-soft);
   line-height: 1.8;
-  max-width: 430px;
-  margin-bottom: 36px;
+  max-width: 820px;
+  margin-bottom: 32px;
 }
 
 .btn-story-outline {
@@ -538,41 +594,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: #fff;
 }
 
-.story-img-wrap {
-  border-radius: 14px;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  box-shadow: 0 28px 72px rgba(28, 36, 32, 0.14);
-}
-
-.story-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Placeholder for factory image */
-.factory-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  background: linear-gradient(155deg, #CED9C9 0%, #A8BCA2 100%);
-  color: #5a7050;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.factory-placeholder svg { opacity: 0.35; }
-
-/* ============================================================
-   STATS BANNER
-   ============================================================ */
 .stats {
   background: var(--color-stats-bg);
   padding: 64px 0;
@@ -601,12 +622,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .stat-number {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 700;
   font-size: clamp(1.8rem, 4vw, 3.8rem);
   color: #fff;
   line-height: 1;
   margin-bottom: 10px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .stat-suffix {
@@ -619,9 +640,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .stat-label {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.02em;
 }
 
 .stats-desc {
@@ -629,15 +651,15 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .stats-desc p {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.72);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.85);
   margin-bottom: 22px;
 }
 
 .stats-desc-cta {
   display: inline-block;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #fff;
   text-decoration: none;
@@ -647,6 +669,540 @@ ul { list-style: none; margin: 0; padding: 0; }
   transition: opacity 0.2s;
 }
 .stats-desc-cta:hover { opacity: 0.75; }
+
+/* ============================================================
+   OUR CAPABILITIES SHOWCASE (Full-Width Interactive Slider)
+   ============================================================ */
+.cap-showcase {
+  position: relative;
+  width: 100%;
+  min-height: 95vh;
+  min-height: 95svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0f1610;
+  overflow: clip;
+}
+
+/* Background image crossfade slides */
+.cap-showcase-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.cap-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.cap-bg-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Cinematic dark overlay for contrast and legibility */
+.cap-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 20, 15, 0.72) 0%,
+    rgba(14, 20, 15, 0.38) 35%,
+    rgba(14, 20, 15, 0.52) 65%,
+    rgba(10, 15, 11, 0.90) 100%
+  );
+}
+
+/* Foreground content — occupies 95vh when room permits */
+.cap-showcase-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 95vh;
+  min-height: 95svh;
+  padding: clamp(48px, 6vh, 80px) 0 clamp(40px, 5vh, 64px);
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+/* Top header block */
+.cap-showcase-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  width: 100%;
+}
+
+.cap-showcase-eyebrow {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 6px 0;
+}
+
+.cap-showcase-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px 0;
+  max-width: 650px;
+}
+
+.cap-showcase-subtitle {
+  font-size: clamp(0.85rem, 1vw, 0.96rem);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.45;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* Bottom container */
+.cap-showcase-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Horizontal scrollable track for cards */
+.cap-cards-track {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 12px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cap-cards-track::-webkit-scrollbar { display: none; }
+
+/* Individual Card (Equal width for both active and inactive)
+   Shows ~3 full cards plus the 4th card peeking (offset/overflow) */
+.cap-card {
+  position: relative;
+  flex: 0 0 calc((100% - (16px * 3)) / 3.4);
+  min-width: 280px;
+  max-width: 380px;
+  min-height: 230px;
+  scroll-snap-align: start;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.35s ease,
+              border-color 0.35s ease,
+              transform 0.25s ease,
+              box-shadow 0.35s ease,
+              color 0.3s ease;
+  user-select: none;
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.cap-card:hover:not(.is-active) {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: translateY(-4px);
+}
+
+/* Inactive frosted card: displays Number followed by Heading in bigger font size */
+.cap-card:not(.is-active) .cap-card-active-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.cap-card:not(.is-active) .cap-card-inactive-view {
+  display: none;
+}
+.cap-card:not(.is-active) .cap-card-desc-active,
+.cap-card:not(.is-active) .cap-card-divider,
+.cap-card:not(.is-active) .cap-card-btn {
+  display: none !important;
+}
+.cap-card:not(.is-active) .cap-card-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2px;
+}
+.cap-card:not(.is-active) .cap-card-title-active {
+  color: #FFFFFF;
+  margin: 0;
+  font-size: clamp(1.28rem, 1.68vw, 1.58rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* Active Card: Solid White crisp card */
+.cap-card.is-active {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
+  cursor: default;
+  transform: none;
+  color: var(--color-ink);
+}
+
+.cap-card-active-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  gap: 12px;
+}
+
+/* Number on card */
+.cap-card-number {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-sage-deep);
+  margin-bottom: 2px;
+  line-height: 1;
+  display: block;
+}
+
+.cap-card-title-active {
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 1.68vw, 1.58rem);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cap-card-desc-active {
+  font-size: clamp(0.92rem, 1.05vw, 1rem);
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+/* ============================================================
+   TEST SECTION SPECIAL STYLING
+   Fixed bottom-right card overlay with crossfade on nav
+   ============================================================ */
+.cap-showcase--test .cap-cards-track {
+  position: relative;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  display: block;
+  min-height: 200px;
+  width: 100%;
+}
+
+.cap-showcase--test .cap-card {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(320px, 32vw, 420px);
+  max-width: 100%;
+  min-height: 190px;
+  flex: none;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  color: var(--color-ink);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.5s;
+  cursor: default;
+  z-index: 1;
+}
+
+.cap-showcase--test .cap-card.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  z-index: 2;
+}
+
+.cap-showcase--test .cap-card .cap-card-active-view {
+  display: flex !important;
+}
+
+.cap-showcase--test .cap-card .cap-card-desc-active,
+.cap-showcase--test .cap-card .cap-card-title-active,
+.cap-showcase--test .cap-card .cap-card-number {
+  display: block !important;
+}
+
+.cap-showcase--test .cap-card .cap-card-number {
+  color: var(--color-sage-deep) !important;
+}
+
+.cap-showcase--test .cap-card .cap-card-title-active {
+  color: var(--color-ink) !important;
+}
+
+.cap-showcase--test .cap-card .cap-card-desc-active {
+  color: var(--color-ink-soft) !important;
+}
+
+/* Bottom controls bar (Progress on left, Nav buttons on right) */
+.cap-showcase-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Progress indicator (Bottom-Left) */
+.cap-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cap-progress-track {
+  width: 130px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cap-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 14.28%;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cap-progress-counter {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Nav arrow buttons (Bottom-Right, side-by-side) */
+.cap-nav-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cap-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.cap-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: scale(1.05);
+}
+.cap-nav-btn:active {
+  transform: scale(0.96);
+}
+.cap-nav-btn svg,
+.cap-nav-btn i {
+  width: 18px;
+  height: 18px;
+}
+
+/* Short height screens adaptation */
+@media (max-height: 720px) {
+  .cap-showcase-content {
+    padding: 16px 0 12px;
+    gap: 8px;
+  }
+  .cap-showcase-title {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    margin-bottom: 2px;
+  }
+  .cap-card {
+    min-height: 195px;
+    padding: 14px 14px 12px;
+  }
+  .cap-card-desc-active {
+    font-size: 0.73rem;
+    line-height: 1.38;
+  }
+  .cap-showcase-bottom {
+    gap: 6px;
+  }
+  .cap-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ============================================================
+   CONTACT / GET IN TOUCH CTA BANNER
+   ============================================================ */
+.cta-banner {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0d140e;
+  padding: 88px 0;
+  box-sizing: border-box;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  inset: -10px;
+  background-image: url('assets/images/hero_temp.jpg');
+  background-size: cover;
+  background-position: center center;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.cta-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 20, 15, 0.65);
+  z-index: 1;
+}
+
+.cta-banner-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cta-banner-eyebrow {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 12px;
+}
+
+.cta-banner-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-banner-sub {
+  font-size: clamp(0.95rem, 1.15vw, 1.12rem);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  margin: 0 auto 30px;
+  max-width: 740px;
+}
+
+.cta-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: #FFFFFF;
+  border-radius: 999px;
+  padding: 14px 34px;
+  text-decoration: none;
+  transition: background 0.22s ease, color 0.22s ease, transform 0.2s ease, box-shadow 0.22s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.cta-banner-btn:hover {
+  background: var(--color-sage-deep);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cta-banner-btn svg,
+.cta-banner-btn i {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.cta-banner-btn:hover svg,
+.cta-banner-btn:hover i {
+  transform: translateX(3px);
+}
 
 /* ============================================================
    SITE FOOTER
@@ -827,8 +1383,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   }
   .pillar:last-child { border-bottom: none; }
 
-  .story-inner { grid-template-columns: 1fr; gap: 52px; }
+  .story-header-grid { grid-template-columns: 1fr; gap: 20px; }
+  .story-inner { padding-bottom: 48px; }
   .story-body { max-width: 100%; }
+  .story-showcase-media { height: 50vh; min-height: 380px; }
 
   .stats-inner {
     grid-template-columns: 1fr 1fr 1fr;
@@ -840,6 +1398,11 @@ ul { list-style: none; margin: 0; padding: 0; }
     padding: 36px 0 0;
     margin-top: 32px;
   }
+
+  /* Cap showcase at tablet */
+  .cap-showcase { min-height: 100vh; min-height: 100svh; }
+  .cap-card { min-height: 210px; height: auto; }
+  .cap-card.is-active { min-height: 210px; height: auto; flex: 0 0 340px; }
 }
 
 /* ============================================================
@@ -925,6 +1488,18 @@ ul { list-style: none; margin: 0; padding: 0; }
   .footer-copy { font-size: 12px !important; }
   .main-nav ul li a { font-size: 14px !important; }
   a[class*="btn-"], button[class*="btn-"] { font-size: 10px !important; }
+
+  /* Cap showcase mobile */
+  .cap-showcase { min-height: 100vh; min-height: 100svh; }
+  .cap-showcase-content { padding: 48px 0 32px; gap: 20px; }
+  .cap-showcase-title { font-size: 26px !important; }
+  .cap-card { flex: 0 0 78vw; min-width: 250px; min-height: 190px; height: auto; padding: 18px 18px 16px; border-radius: 16px; }
+  .cap-card-title-active { font-size: 1.3rem !important; }
+  .cap-card-desc-active { font-size: 0.88rem !important; line-height: 1.45; }
+  .cap-progress-track { width: 80px; }
+
+  /* Test section mobile fixed card */
+  .cap-showcase--test .cap-card { width: calc(100% - 32px); min-height: 180px; }
 }
 
 /* ============================================================
@@ -933,7 +1508,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 500px) {
   :root { --container-pad: 16px; }
   .hero-body { padding-bottom: 68px; }
-  .hero-ctas { flex-direction: column; align-items: flex-start; }
+  .hero-ctas { flex-direction: column; align-items: center; }
 
   .fabrics-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
@@ -1009,7 +1584,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   <section class="hero" aria-label="Hero — Driving Clean Fashion">
 
     <div class="hero-media">
-      <img src="hero-ayushi.webp" alt="Close-up of colourful threads on a weaving loom at an Aayushi Fab facility, Surat" />
+      <img src="assets/images/hero-2.jpg" alt="Close-up of colourful threads on a weaving loom at an Aayushi Fab facility, Surat" />
       <div class="hero-overlay" aria-hidden="true"></div>
     </div>
 
@@ -1027,7 +1602,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 
   <!-- ==========================================================
-       STATS BANNER
+       STATS BANNER (Directly below Hero)
        ========================================================== -->
   <section class="stats" aria-label="Company statistics">
     <div class="stats-inner">
@@ -1057,26 +1632,152 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 
   <!-- ==========================================================
-       OUR STORY — Split layout
+       OUR STORY — Editorial Layout with Full-Viewport Image
        ========================================================== -->
   <section class="story" aria-labelledby="story-title">
     <div class="story-inner">
 
-      <!-- Left: Text -->
-      <div class="story-text">
-        <p class="section-eyebrow story-eyebrow">Our Story</p>
-        <h2 class="story-heading" id="story-title">Rooted in values.<br>Woven over <span class="text-sage">generations</span>.</h2>
-        <p class="story-body">From a small beginning in 1948 to becoming a trusted name in global markets, our journey has been shaped by integrity, innovation and a deep respect for the people and the planet.</p>
-        <a href="about.html" class="btn-story-outline" id="btn-discover-story">Discover Our Story</a>
-      </div>
-
-      <!-- Right: Factory / Facility image -->
-      <div class="story-img-wrap">
-        <img src="about-us.webp" alt="Aayushi Fab manufacturing facility and team" width="800" height="600" loading="lazy">
+      <!-- Top: Label on left, Heading & Description on right -->
+      <div class="story-header-grid">
+        <div class="story-label-col">
+          <p class="story-eyebrow">About us &mdash;</p>
+        </div>
+        <div class="story-content-col">
+          <h2 class="story-heading" id="story-title">Rooted in values.<br>Woven over <span class="text-sage">generations</span>.</h2>
+          <p class="story-body">From a small beginning in 1948 to becoming a trusted name in global markets, our journey has been shaped by integrity, innovation and a deep respect for people and the planet. Every process runs with passion and precision to deliver responsible, high-performance textiles.</p>
+          <a href="about.html" class="btn-story-outline" id="btn-discover-story">Discover Our Story</a>
+        </div>
       </div>
 
     </div>
+
   </section>
+
+
+  <!-- ==========================================================
+       OUR CAPABILITIES SHOWCASE (Full-Width Interactive Slider)
+       ========================================================== -->
+  <section class="cap-showcase" id="cap-showcase" aria-labelledby="cap-showcase-title">
+
+    <!-- Background image layers for smooth GPU-accelerated crossfade -->
+    <div class="cap-showcase-bg" id="cap-bg-container">
+      <div class="cap-bg-slide is-active" style="background-image: url('assets/images/weaving-main.webp');" role="img" aria-label="Weaving loom at Aayushi Fab"></div>
+      <div class="cap-bg-slide" style="background-image: url('assets/images/knitting-machine.jpg');" role="img" aria-label="Circular knitting facility"></div>
+      <div class="cap-bg-slide" style="background-image: url('assets/images/digital-printing-main.webp');" role="img" aria-label="Digital printing machinery"></div>
+      <div class="cap-bg-slide" style="background-image: url('assets/images/Embroideries-main.webp');" role="img" aria-label="Computerized embroidery machines"></div>
+      <div class="cap-bg-slide" style="background-image: url('assets/images/our_scale.jpg');" role="img" aria-label="Foil printing and textile finishing"></div>
+      <div class="cap-bg-slide" style="background-image: url('assets/images/yarn-main.webp');" role="img" aria-label="Yarn processing and texturizing"></div>
+      <div class="cap-bg-slide" style="background-image: url('assets/images/processing-main.webp');" role="img" aria-label="Eco-friendly dyeing and processing"></div>
+    </div>
+
+    <!-- Cinematic dark overlay -->
+    <div class="cap-showcase-overlay" aria-hidden="true"></div>
+
+    <!-- Foreground Content -->
+    <div class="cap-showcase-content">
+
+      <!-- Top Header -->
+      <div class="cap-showcase-header">
+        <p class="cap-showcase-eyebrow">Fully Integrated Manufacturing</p>
+        <h2 class="cap-showcase-title" id="cap-showcase-title">Our Capabilities</h2>
+      </div>
+
+      <!-- Bottom Container -->
+      <div class="cap-showcase-bottom">
+
+        <!-- Horizontal scrollable track of cards -->
+        <div class="cap-cards-track" id="cap-cards-track" role="tablist" aria-label="Manufacturing Capabilities">
+
+          <!-- Card 1: Weaving -->
+          <div class="cap-card is-active" data-index="0" role="tab" aria-selected="true" tabindex="0">
+            <div class="cap-card-active-view">
+              <span class="cap-card-number">01</span>
+              <h3 class="cap-card-title-active">Weaving</h3>
+              <p class="cap-card-desc-active">High-speed shuttle-less looms delivering precision polyester fabrics and dobbies.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Knitting -->
+          <div class="cap-card" data-index="1" role="tab" aria-selected="false" tabindex="0">
+            <div class="cap-card-active-view">
+              <span class="cap-card-number">02</span>
+              <h3 class="cap-card-title-active">Knitting</h3>
+              <p class="cap-card-desc-active">24 circular knitting machines producing jerseys, ribs, and 4-way stretch fabrics.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Digital Printing -->
+          <div class="cap-card" data-index="2" role="tab" aria-selected="false" tabindex="0">
+            <div class="cap-card-active-view">
+              <span class="cap-card-number">03</span>
+              <h3 class="cap-card-title-active">Digital Printing</h3>
+              <p class="cap-card-desc-active">Industrial inkjet print engines producing photorealistic motifs with zero water wastage.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Embroideries -->
+          <div class="cap-card" data-index="3" role="tab" aria-selected="false" tabindex="0">
+            <div class="cap-card-active-view">
+              <span class="cap-card-number">04</span>
+              <h3 class="cap-card-title-active">Embroideries</h3>
+              <p class="cap-card-desc-active">Computerized multi-head embroidery systems executing intricate cording and thread work.</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Foil Printing -->
+          <div class="cap-card" data-index="4" role="tab" aria-selected="false" tabindex="0">
+            <div class="cap-card-active-view">
+              <span class="cap-card-number">05</span>
+              <h3 class="cap-card-title-active">Foil Printing</h3>
+              <p class="cap-card-desc-active">Thermal foil transfer delivering metallic and high-lustre decorative textile finishes.</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Yarns -->
+          <div class="cap-card" data-index="5" role="tab" aria-selected="false" tabindex="0">
+            <div class="cap-card-active-view">
+              <span class="cap-card-number">06</span>
+              <h3 class="cap-card-title-active">Yarns</h3>
+              <p class="cap-card-desc-active">In-house twisting and texturizing of virgin and GRS-certified recycled polyester yarns.</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Processing -->
+          <div class="cap-card" data-index="6" role="tab" aria-selected="false" tabindex="0">
+            <div class="cap-card-active-view">
+              <span class="cap-card-number">07</span>
+              <h3 class="cap-card-title-active">Processing</h3>
+              <p class="cap-card-desc-active">Integrated dyeing, scouring, and functional finishing under strict ZDHC compliance.</p>
+            </div>
+          </div>
+
+        </div><!-- /.cap-cards-track -->
+
+        <!-- Bottom Controls Bar -->
+        <div class="cap-showcase-controls">
+          <!-- Progress on Left -->
+          <div class="cap-progress-wrap">
+            <div class="cap-progress-track">
+              <div class="cap-progress-fill" id="cap-progress-fill"></div>
+            </div>
+            <span class="cap-progress-counter" id="cap-progress-counter">01 / 07</span>
+          </div>
+
+          <!-- Nav buttons on Right (Side by side) -->
+          <div class="cap-nav-wrap">
+            <button class="cap-nav-btn" id="cap-nav-prev" aria-label="Previous capability">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="cap-nav-btn" id="cap-nav-next" aria-label="Next capability">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /.cap-showcase-bottom -->
+
+    </div><!-- /.cap-showcase-content -->
+  </section><!-- /.cap-showcase -->
 
 
   <!-- ==========================================================
@@ -1150,6 +1851,29 @@ ul { list-style: none; margin: 0; padding: 0; }
 
       <a href="fabrics.html" class="btn-explore" id="btn-explore-all">Explore All Fabrics</a>
 
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       CONTACT / GET IN TOUCH CTA SECTION
+       ========================================================== -->
+  <section class="cta-banner" id="cta-contact-banner" aria-labelledby="cta-banner-heading">
+    <!-- Blurred background image -->
+    <div class="cta-banner-bg" aria-hidden="true"></div>
+
+    <!-- Dark translucent contrast overlay -->
+    <div class="cta-banner-overlay" aria-hidden="true"></div>
+
+    <!-- Foreground Content -->
+    <div class="cta-banner-inner">
+      <p class="cta-banner-eyebrow">Start a Collaboration</p>
+      <h2 class="cta-banner-heading" id="cta-banner-heading">Partner With India&rsquo;s Leading Textile Innovators</h2>
+      <p class="cta-banner-sub">Looking for custom weaves, sustainable yarns, or rapid sample turnarounds? Let&rsquo;s discuss how we can bring your next collection to life.</p>
+      <a href="contact.html" class="cta-banner-btn" id="btn-cta-contact">
+        <span>Get in Touch</span>
+        <i data-lucide="arrow-right"></i>
+      </a>
     </div>
   </section>
 
@@ -1284,6 +2008,114 @@ mainNav.querySelectorAll('a').forEach(link => {
     navToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+/* ============================================================
+   OUR CAPABILITIES SHOWCASE JS (Supports multiple slider instances)
+   ============================================================ */
+(function() {
+  function initShowcaseSlider(sectionId, trackId, fillId, counterId, prevBtnId, nextBtnId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const cards   = Array.from(section.querySelectorAll('.cap-card'));
+    const slides  = Array.from(section.querySelectorAll('.cap-bg-slide'));
+    const track   = document.getElementById(trackId);
+    const fill    = document.getElementById(fillId);
+    const counter = document.getElementById(counterId);
+    const btnPrev = document.getElementById(prevBtnId);
+    const btnNext = document.getElementById(nextBtnId);
+
+    if (!cards.length) return;
+
+    let current = 0;
+    const total = cards.length;
+
+    function setCapability(index, userInitiated = false) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      current = index;
+
+      // 1. Update active card
+      cards.forEach((card, i) => {
+        const isActive = i === current;
+        card.classList.toggle('is-active', isActive);
+        card.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      // 2. Crossfade background slides
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('is-active', i === current);
+      });
+
+      // 3. Update progress indicator
+      if (fill) {
+        const pctWidth = 100 / total;
+        fill.style.width = pctWidth + '%';
+        fill.style.left  = (current * pctWidth) + '%';
+      }
+      if (counter) {
+        counter.textContent = `0${current + 1} / 0${total}`;
+      }
+
+      // 4. Smooth scroll track so the active card is brought into view
+      if (track) {
+        const activeCard = cards[current];
+        if (activeCard) {
+          const cardOffset = activeCard.offsetLeft - track.offsetLeft;
+          track.scrollTo({ left: cardOffset, behavior: 'smooth' });
+        }
+      }
+    }
+
+    // Click / Enter on cards
+    cards.forEach((card, i) => {
+      card.addEventListener('click', () => setCapability(i, true));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setCapability(i, true);
+        }
+      });
+    });
+
+    // Prev / Next button clicks
+    if (btnPrev) {
+      btnPrev.addEventListener('click', () => setCapability(current - 1, true));
+    }
+    if (btnNext) {
+      btnNext.addEventListener('click', () => setCapability(current + 1, true));
+    }
+
+    // Auto advance timer
+    let autoTimer = setInterval(() => {
+      setCapability(current + 1, false);
+    }, 5000);
+
+    section.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    section.addEventListener('focusin',    () => clearInterval(autoTimer));
+    section.addEventListener('mouseleave', () => {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => setCapability(current + 1, false), 5000);
+    });
+    section.addEventListener('focusout', (e) => {
+      if (!section.contains(e.relatedTarget)) {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => setCapability(current + 1, false), 5000);
+      }
+    });
+
+    // Initialize first state
+    setCapability(0, false);
+  }
+
+  // Initialize capabilities showcase
+  initShowcaseSlider('cap-showcase', 'cap-cards-track', 'cap-progress-fill', 'cap-progress-counter', 'cap-nav-prev', 'cap-nav-next');
+})();
+
+/* Initialize Lucide icons */
+if (typeof lucide !== 'undefined' && lucide.createIcons) {
+  lucide.createIcons();
+}
 </script>
 
 </body>

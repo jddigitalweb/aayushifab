@@ -1,0 +1,125 @@
+<!-- ==========================================================
+     TEMPLATE: home-capabilites-module
+     Full-Width Interactive Capabilities Slider
+     ========================================================== -->
+<section class="cap-showcase" id="cap-showcase" aria-labelledby="cap-showcase-title">
+
+  <!-- Background image layers for smooth GPU-accelerated crossfade -->
+  <div class="cap-showcase-bg" id="cap-bg-container">
+    <div class="cap-bg-slide is-active" style="background-image: url('assets/images/weaving-main.webp');" role="img" aria-label="Weaving loom at Aayushi Fab"></div>
+    <div class="cap-bg-slide" style="background-image: url('assets/images/knitting-machine.jpg');" role="img" aria-label="Circular knitting facility"></div>
+    <div class="cap-bg-slide" style="background-image: url('assets/images/digital-printing-main.webp');" role="img" aria-label="Digital printing machinery"></div>
+    <div class="cap-bg-slide" style="background-image: url('assets/images/Embroideries-main.webp');" role="img" aria-label="Computerized embroidery machines"></div>
+    <div class="cap-bg-slide" style="background-image: url('assets/images/our_scale.jpg');" role="img" aria-label="Foil printing and textile finishing"></div>
+    <div class="cap-bg-slide" style="background-image: url('assets/images/yarn-main.webp');" role="img" aria-label="Yarn processing and texturizing"></div>
+    <div class="cap-bg-slide" style="background-image: url('assets/images/processing-main.webp');" role="img" aria-label="Eco-friendly dyeing and processing"></div>
+  </div>
+
+  <!-- Cinematic dark overlay -->
+  <div class="cap-showcase-overlay" aria-hidden="true"></div>
+
+  <!-- Foreground Content -->
+  <div class="cap-showcase-content">
+
+    <!-- Top Header -->
+    <div class="cap-showcase-header">
+      <p class="cap-showcase-eyebrow">Fully Integrated Manufacturing</p>
+      <h2 class="cap-showcase-title" id="cap-showcase-title">Our Capabilities</h2>
+    </div>
+
+    <!-- Bottom Container -->
+    <div class="cap-showcase-bottom">
+
+      <!-- Horizontal scrollable track of cards -->
+      <div class="cap-cards-track" id="cap-cards-track" role="tablist" aria-label="Manufacturing Capabilities">
+
+        <!-- Card 1: Weaving -->
+        <div class="cap-card is-active" data-index="0" role="tab" aria-selected="true" tabindex="0">
+          <div class="cap-card-active-view">
+            <span class="cap-card-number">01</span>
+            <h3 class="cap-card-title-active">Weaving</h3>
+            <p class="cap-card-desc-active">High-speed shuttle-less looms delivering precision polyester fabrics and dobbies.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Knitting -->
+        <div class="cap-card" data-index="1" role="tab" aria-selected="false" tabindex="0">
+          <div class="cap-card-active-view">
+            <span class="cap-card-number">02</span>
+            <h3 class="cap-card-title-active">Knitting</h3>
+            <p class="cap-card-desc-active">24 circular knitting machines producing jerseys, ribs, and 4-way stretch fabrics.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Digital Printing -->
+        <div class="cap-card" data-index="2" role="tab" aria-selected="false" tabindex="0">
+          <div class="cap-card-active-view">
+            <span class="cap-card-number">03</span>
+            <h3 class="cap-card-title-active">Digital Printing</h3>
+            <p class="cap-card-desc-active">Industrial inkjet print engines producing photorealistic motifs with zero water wastage.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Embroideries -->
+        <div class="cap-card" data-index="3" role="tab" aria-selected="false" tabindex="0">
+          <div class="cap-card-active-view">
+            <span class="cap-card-number">04</span>
+            <h3 class="cap-card-title-active">Embroideries</h3>
+            <p class="cap-card-desc-active">Computerized multi-head embroidery systems executing intricate cording and thread work.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Foil Printing -->
+        <div class="cap-card" data-index="4" role="tab" aria-selected="false" tabindex="0">
+          <div class="cap-card-active-view">
+            <span class="cap-card-number">05</span>
+            <h3 class="cap-card-title-active">Foil Printing</h3>
+            <p class="cap-card-desc-active">Thermal foil transfer delivering metallic and high-lustre decorative textile finishes.</p>
+          </div>
+        </div>
+
+        <!-- Card 6: Yarns -->
+        <div class="cap-card" data-index="5" role="tab" aria-selected="false" tabindex="0">
+          <div class="cap-card-active-view">
+            <span class="cap-card-number">06</span>
+            <h3 class="cap-card-title-active">Yarns</h3>
+            <p class="cap-card-desc-active">In-house twisting and texturizing of virgin and GRS-certified recycled polyester yarns.</p>
+          </div>
+        </div>
+
+        <!-- Card 7: Processing -->
+        <div class="cap-card" data-index="6" role="tab" aria-selected="false" tabindex="0">
+          <div class="cap-card-active-view">
+            <span class="cap-card-number">07</span>
+            <h3 class="cap-card-title-active">Processing</h3>
+            <p class="cap-card-desc-active">Integrated dyeing, scouring, and functional finishing under strict ZDHC compliance.</p>
+          </div>
+        </div>
+
+      </div><!-- /.cap-cards-track -->
+
+      <!-- Bottom Controls Bar -->
+      <div class="cap-showcase-controls">
+        <!-- Progress on Left -->
+        <div class="cap-progress-wrap">
+          <div class="cap-progress-track">
+            <div class="cap-progress-fill" id="cap-progress-fill"></div>
+          </div>
+          <span class="cap-progress-counter" id="cap-progress-counter">01 / 07</span>
+        </div>
+
+        <!-- Nav buttons on Right (Side by side) -->
+        <div class="cap-nav-wrap">
+          <button class="cap-nav-btn" id="cap-nav-prev" aria-label="Previous capability">
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button class="cap-nav-btn" id="cap-nav-next" aria-label="Next capability">
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /.cap-showcase-bottom -->
+
+  </div><!-- /.cap-showcase-content -->
+</section><!-- /.cap-showcase -->

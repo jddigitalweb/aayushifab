@@ -7,7 +7,7 @@
 <meta name="description" content="View third-party certifications and compliance audits for Aayushi Fab &mdash; GRS, OEKO-TEX Standard 100, Higg Index FSLM, R|Elan HEP Partner, and Control Union.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Work+Sans:wght@400;500;600&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 
@@ -26,7 +26,7 @@
   --color-stats-bg:    #3B5434;
   --color-footer-bg:   #1C2A18;
 
-  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body:    "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --nav-height:     72px;
@@ -183,11 +183,11 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .cert-hero-heading {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: clamp(1.4rem, 4.2vw, 52px);
   line-height: 1.16;
   color: #fff;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   max-width: 820px;
   margin: 0 auto 20px;
 }
@@ -225,11 +225,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .certs-intro-heading {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: clamp(1.3rem, 3.5vw, 2.7rem);
   color: var(--color-ink);
   line-height: 1.2;
   max-width: 680px;
+  letter-spacing: -0.02em;
 }
 
 .certs-grid {
@@ -267,7 +268,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .img-ph-label-main { font-size:0.74rem; letter-spacing:0.1em; font-weight:600; }
 .img-ph-subtext { font-size:0.64rem; letter-spacing:0.06em; opacity:0.75; font-weight:500; text-transform:none; }
 
-.cert-card-heading { font-family:var(--font-display); font-weight:400; font-size:1.1rem; color:var(--color-ink); line-height:1.25; margin-bottom:14px; }
+.cert-card-heading { font-family:var(--font-display); font-weight:600; font-size:1.1rem; color:var(--color-ink); line-height:1.25; margin-bottom:14px; letter-spacing:-0.01em; }
 
 .cert-card-caption {
   font-size: 0.92rem;
@@ -330,11 +331,11 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .certs-cta-heading {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 600;
   font-size: clamp(2rem, 4vw, 3.2rem);
   color: #fff;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   max-width: 680px;
   margin: 0 auto 16px;
 }
@@ -591,7 +592,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   <!-- PAGE BANNER / INTRO BAND -->
   <section class="cert-hero" aria-label="Certifications Overview">
     <div class="cert-hero-media">
-      <img src="certifications.jpg" alt="Verified sustainability standards and accreditations" width="1600" height="900" />
+      <img src="assets/images/certifications.jpg" alt="Verified sustainability standards and accreditations" width="1600" height="900" />
       <div class="cert-hero-overlay" aria-hidden="true"></div>
     </div>
     <div class="cert-hero-body">
@@ -617,7 +618,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 1. Global Recycled Standard (GRS) -->
         <article class="cert-card" aria-labelledby="cert-grs-title">
           <div class="cert-badge-wrap">
-            <img src="grs.png" alt="Global Recycled Standard (GRS) certification seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
+            <img src="assets/logos/grs.png" alt="Global Recycled Standard (GRS) certification seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-grs-title">Global Recycled Standard (GRS)</h3>
           <p class="cert-card-caption">All Aayushi Fab facilities are GRS certified, underpinning our sustainable recycled polyester fabric production and preferred-buyer status for certified recycled yarns.</p>
@@ -626,7 +627,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 2. OEKO-TEX Standard 100 -->
         <article class="cert-card" aria-labelledby="cert-oeko-title">
           <div class="cert-badge-wrap">
-            <img src="oeko-tex.png" alt="OEKO-TEX Standard 100 certificate badge" style="max-width:100%;max-height:80px;object-fit:contain;" />
+            <img src="assets/logos/oeko-tex.png" alt="OEKO-TEX Standard 100 certificate badge" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-oeko-title">OEKO-TEX&reg; Standard 100</h3>
           <p class="cert-card-caption">Certificate no. 20.HIN.22445 HOHENSTEIN HTTI. Rigorously tested to ensure all manufactured fabrics are free from harmful chemical substances and ecologically safe.</p>
@@ -635,7 +636,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 3. Higg Index FSLM -->
         <article class="cert-card" aria-labelledby="cert-higg-title">
           <div class="cert-badge-wrap">
-            <img src="higg index.png" alt="Higg Facility Social & Labor Module verified assessment seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
+            <img src="assets/logos/higg index.png" alt="Higg Facility Social & Labor Module verified assessment seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-higg-title">Higg Facility Social &amp; Labor Module</h3>
           <div class="cert-caption-container">
@@ -647,7 +648,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 4. R|Elan HEP Partner -->
         <article class="cert-card" aria-labelledby="cert-relan-title">
           <div class="cert-badge-wrap">
-            <img src="Relan.png" alt="R|Elan Hub Excellence Program Partner badge" style="max-width:100%;max-height:80px;object-fit:contain;" />
+            <img src="assets/logos/Relan.png" alt="R|Elan Hub Excellence Program Partner badge" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-relan-title">R|Elan&trade; HEP Partner</h3>
           <p class="cert-card-caption">Selected in 2017 as an authorized Hub Excellence Program (HEP) Partner for Reliance Industries' R|Elan high-performance yarn range (&ldquo;Fabric 2.0: The Future of Fabrics&rdquo;).</p>
@@ -656,7 +657,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         <!-- 5. Certified & Audited by Control Union -->
         <article class="cert-card" aria-labelledby="cert-cu-title">
           <div class="cert-badge-wrap">
-            <img src="control union.png" alt="Control Union audit and certification seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
+            <img src="assets/logos/control union.png" alt="Control Union audit and certification seal" style="max-width:100%;max-height:80px;object-fit:contain;" />
           </div>
           <h3 class="cert-card-heading" id="cert-cu-title">Certified &amp; Audited by Control Union</h3>
           <p class="cert-card-caption">Independently audited and certified by Control Union for supply chain integrity, material traceability, and continuous environmental management compliance.</p>

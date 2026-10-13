@@ -26,7 +26,7 @@
   --color-stats-bg:    #3B5434;
   --color-footer-bg:   #1C2A18;
 
-  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body:    "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --nav-height:     72px;
@@ -135,9 +135,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--color-sage-deep); margin-bottom: 14px;
 }
 .section-heading {
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 600;
   font-size: clamp(1.3rem, 3.5vw, 2.7rem);
   color: var(--color-ink); line-height: 1.18; margin-bottom: 18px;
+  letter-spacing: -0.02em;
 }
 .section-sub { font-size: 0.94rem; color: var(--color-ink-soft); line-height: 1.8; }
 .section-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--container-pad); }
@@ -224,11 +225,11 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .about-hero-heading {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: clamp(1.4rem, 4.2vw, 52px);
   line-height: 1.16;
   color: #fff;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   max-width: 820px;
   margin: 0 auto 20px;
 }
@@ -242,24 +243,619 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 /* ============================================================
-   OPENING STATEMENT
+   OPENING STATEMENT — Asymmetric Split with Stat Cards
    ============================================================ */
-.opening { padding: 100px 0 96px; background: var(--color-bg); text-align: center; }
-.opening-heading {
-  font-family: var(--font-display); font-weight: 300;
-  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
-  line-height: 1.2; color: var(--color-ink);
-  letter-spacing: -0.01em; max-width: 860px;
-  margin: 0 auto 22px;
+.opening {
+  padding: 108px 0 100px;
+  background: var(--color-bg-soft);
 }
-.opening-sub {
-  font-size: 0.96rem; color: var(--color-ink-soft);
-  line-height: 1.8; max-width: 560px; margin: 0 auto;
+
+.opening-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 56px;
+  align-items: flex-start;
+}
+
+.opening-badge-col {
+  padding-top: 6px;
+}
+
+.opening-eyebrow {
+  font-family: var(--font-body);
+  font-size: calc(0.72rem + 4px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+  display: inline-block;
+}
+
+.opening-content-col {
+  width: 100%;
+}
+
+.opening-heading {
+  font-family: 'Montserrat', var(--font-display);
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 1.24;
+  color: #111111;
+  letter-spacing: -0.02em;
+  max-width: 100%;
+  margin: 0 0 56px 0;
+}
+
+.opening-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.opening-card {
+  background: var(--color-stats-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 34px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #fff;
+}
+
+.opening-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(59, 84, 52, 0.28);
+}
+
+.opening-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-stats-bg);
+  margin-bottom: 32px;
+}
+
+.opening-card-icon svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.75;
+}
+
+.opening-card-num {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: clamp(1.8rem, 2.4vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px 0;
+}
+
+.opening-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.84);
+  margin: 0;
 }
 
 /* ============================================================
-   SPLIT LAYOUT
+   FOUNDER & LEADERSHIP SECTION (Redesigned)
    ============================================================ */
+.founder-section {
+  background: #FFFFFF;
+  padding: 104px 0 112px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--color-line);
+}
+
+.founder-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.founder-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.founder-tag {
+  font-family: var(--font-body);
+  font-size: calc(0.72rem + 4px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.founder-tag-pill {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-sage-deep);
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.founder-quote-wrap {
+  position: relative;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+
+.founder-quote-mark {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: 5rem;
+  line-height: 0.7;
+  color: var(--color-sage-pale);
+  margin-bottom: -12px;
+  user-select: none;
+}
+
+.founder-quote {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: clamp(1.65rem, 2.35vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.32;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.founder-narrative {
+  margin-bottom: 34px;
+}
+
+.founder-narrative p {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.8;
+  color: var(--color-ink-soft);
+  margin: 0 0 16px 0;
+}
+
+.founder-narrative p:last-child {
+  margin-bottom: 0;
+}
+
+/* Milestone micro-strip */
+.founder-milestones {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  padding: 18px 24px;
+  margin-bottom: 34px;
+  max-width: 580px;
+}
+
+.founder-milestone-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-ms-val {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 3px;
+}
+
+.founder-ms-lbl {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--color-ink-soft);
+  line-height: 1.3;
+}
+
+.founder-milestone-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--color-line);
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* Signature & Title Block */
+.founder-signoff {
+  display: flex;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-line);
+}
+
+.founder-name {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #111111;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px 0;
+}
+
+.founder-title {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-sage-deep);
+  margin: 0;
+}
+
+/* Portrait Frame & Badge */
+.founder-visual {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.founder-portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.founder-portrait-accent {
+  position: absolute;
+  top: 18px;
+  right: -14px;
+  bottom: -18px;
+  left: 14px;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  z-index: 1;
+}
+
+.founder-portrait-img-wrap {
+  position: relative;
+  z-index: 2;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(28, 36, 32, 0.12);
+  border: 1px solid rgba(28, 36, 32, 0.08);
+  aspect-ratio: 3 / 4;
+  background: #EAEFE7;
+}
+
+.founder-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.founder-portrait-frame:hover .founder-portrait-img {
+  transform: scale(1.02);
+}
+
+.founder-card-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-stats-bg);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 12px 18px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.founder-card-badge-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: var(--color-stats-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.founder-card-badge-icon svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 2;
+}
+
+.founder-card-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-card-badge-text strong {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.15;
+}
+
+.founder-card-badge-text span {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.2;
+}
+
+/* ============================================================
+   OUR APPROACH / TEAM SECTION (2-Row Layout)
+   ============================================================ */
+.team-approach-section {
+  padding: 104px 0 116px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.team-approach-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Row 1: Two Columns (Left: Eyebrow + Heading, Right: Justified Description) */
+.team-approach-row-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: flex-end;
+}
+
+.team-approach-header-col-left {
+  text-align: left;
+}
+
+.team-approach-eyebrow {
+  font-family: var(--font-body);
+  font-size: calc(0.72rem + 4px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage-deep);
+  margin: 0 0 16px 0;
+  text-align: left;
+}
+
+.team-approach-heading {
+  font-family: 'Montserrat', var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 3.2vw, 2.85rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0;
+  text-align: left;
+}
+
+.team-approach-heading .text-sage {
+  color: var(--color-sage);
+}
+
+.team-approach-header-col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.team-approach-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+  text-align: justify;
+  margin: 0;
+}
+
+/* Row 2: Team Interactive Slider */
+.team-approach-row-media {
+  width: 100%;
+}
+
+.team-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 24px 0 36px;
+}
+
+.team-slider-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.team-slider-track {
+  display: flex;
+  align-items: center;
+  transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.team-slide {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  cursor: pointer;
+  transform: translateZ(0);
+}
+
+.team-slide-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #EAEFE7;
+  border: 1px solid rgba(28, 36, 32, 0.08);
+  box-shadow: 0 8px 24px rgba(28, 36, 32, 0.08);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s ease;
+  will-change: opacity, transform;
+  /* Non-active state: clear image, slightly softer scale & opacity */
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.team-slide.is-active .team-slide-card {
+  /* Active state: 100% opacity, full scale, emphasized shadow */
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 20px 50px rgba(28, 36, 32, 0.16);
+  border-color: rgba(92, 114, 99, 0.3);
+}
+
+.team-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Nav Buttons */
+.team-slider-nav-btn {
+  position: absolute;
+  top: calc(50% - 18px);
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(28, 36, 32, 0.12);
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  transition: all 0.25s ease;
+}
+
+.team-slider-nav-btn:hover {
+  background: var(--color-sage);
+  color: #FFFFFF;
+  border-color: var(--color-sage);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.team-slider-nav-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.team-slider-nav-btn--prev {
+  left: 12px;
+}
+
+.team-slider-nav-btn--next {
+  right: 12px;
+}
+
+.team-slider-nav-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+}
+
+/* Pagination Dots */
+.team-slider-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.team-slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(28, 36, 32, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.team-slider-dot:hover {
+  background: rgba(28, 36, 32, 0.45);
+}
+
+.team-slider-dot.is-active {
+  background: var(--color-sage);
+  width: 28px;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .team-slide {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-slide {
+    flex: 0 0 82%;
+    max-width: 82%;
+    padding: 0 6px;
+  }
+  .team-slider-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .team-slider-nav-btn--prev { left: 4px; }
+  .team-slider-nav-btn--next { right: 4px; }
+}
+
+/* Backward-compatible split helpers */
 .split-section { padding: 100px 0 108px; }
 .split-section--soft { background: var(--color-bg-soft); }
 .split-section--white { background: var(--color-bg); }
@@ -277,62 +873,317 @@ ul { list-style: none; margin: 0; padding: 0; }
 .split-img--landscape { aspect-ratio: 4 / 3; }
 .split-img--end { justify-self: end; aspect-ratio: 4 / 3; }
 
-.leadership-caption {
-  font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--color-ink-soft); opacity: 0.55; margin-top: 28px;
+/* ============================================================
+   SCALE & OPERATIONS SECTION (Interactive Facility Slider)
+   ============================================================ */
+.scale-section {
+  background: var(--color-bg-soft);
+  padding: 104px 0 112px;
+  border-top: 1px solid var(--color-line);
+  overflow: hidden;
 }
 
-/* Capability tags */
-.scale-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
-.scale-tag {
-  font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--color-sage-deep); background: var(--color-sage-pale);
-  border-radius: 999px; padding: 6px 14px;
+.scale-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.scale-header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.scale-header-content {
+  max-width: 780px;
+}
+
+.scale-eyebrow {
+  font-family: var(--font-body);
+  font-size: calc(0.72rem + 4px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.scale-heading {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #111111;
+  margin: 0 0 18px 0;
+}
+
+.scale-intro-sub {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+/* Slider Controls */
+.scale-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.scale-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-line);
+  background: #FFFFFF;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(28, 36, 32, 0.05);
+}
+
+.scale-nav-btn:hover {
+  background: var(--color-stats-bg);
+  border-color: var(--color-stats-bg);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 84, 52, 0.2);
+}
+
+.scale-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* Slider Track */
+.scale-slider-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.scale-slider-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 0 20px;
+}
+
+.scale-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.scale-slide {
+  flex: 0 0 460px;
+  scroll-snap-align: start;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #E6EAE3;
+  border: 1px solid var(--color-line);
+  box-shadow: 0 12px 32px rgba(28, 36, 32, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scale-slide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(28, 36, 32, 0.14);
+}
+
+.scale-slide-img-box {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+
+.scale-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.scale-slide:hover .scale-slide-img {
+  transform: scale(1.04);
 }
 
 /* ============================================================
-   FOCUS PILLARS
+   FOCUS PILLARS (Photo Backdrop)
    ============================================================ */
-.focus { padding: 100px 0 108px; background: var(--color-bg-soft); }
-.focus-intro { text-align: center; margin-bottom: 64px; }
+.focus {
+  position: relative;
+  padding: 104px 0 112px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(16, 24, 19, 0.82) 0%,
+    rgba(16, 24, 19, 0.86) 100%
+  ), url('assets/images/knitting-machine.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+}
+
+.focus-intro {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.focus-intro .section-eyebrow {
+  color: var(--color-sage-pale);
+  font-size: calc(0.72rem + 4px);
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.focus-intro .section-heading {
+  color: #FFFFFF;
+  font-family: 'Montserrat', var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.focus-intro .section-heading .text-sage {
+  color: #B2D8A7;
+}
+
 .focus-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 2px; border: 1px solid var(--color-line);
-  border-radius: 16px; overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
-.focus-card { padding: 52px 44px; background: var(--color-bg); }
+
+.focus-card {
+  padding: 48px 38px 44px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.32);
+}
+
 .focus-icon {
-  display: inline-flex; width: 52px; height: 52px;
-  align-items: center; justify-content: center;
-  color: var(--color-sage-deep); background: var(--color-sage-pale);
-  border-radius: 12px; margin-bottom: 26px;
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-sage-deep);
+  background: var(--color-sage-pale);
+  border-radius: 12px;
+  margin-bottom: 26px;
 }
+
 .focus-card-heading {
-  font-family: var(--font-display); font-weight: 400;
-  font-size: 1.35rem; color: var(--color-ink);
-  margin-bottom: 14px; line-height: 1.2;
+  font-family: 'Montserrat', var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #111111;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
-.focus-card-body { font-size: 0.93rem; color: var(--color-ink-soft); line-height: 1.8; }
+
+.focus-card-body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  line-height: 1.75;
+  margin: 0;
+}
 
 /* ============================================================
-   LEGACY STRIP
+   LEGACY / STAT STRIP (Blurred Campus Backdrop)
    ============================================================ */
-.legacy { background: var(--color-stats-bg); padding: 88px 0; text-align: center; }
+.legacy {
+  position: relative;
+  padding: 96px 0;
+  text-align: center;
+  overflow: hidden;
+  background: var(--color-stats-bg);
+}
+
+.legacy-bg {
+  position: absolute;
+  inset: -16px;
+  background-image: url('assets/images/hero-2.jpg');
+  background-size: cover;
+  background-position: center center;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+.legacy-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 42, 25, 0.78) 0%,
+    rgba(20, 32, 22, 0.84) 100%
+  );
+  z-index: 1;
+}
+
+.legacy .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
 .legacy-label {
-  font-size: 0.8rem; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(255,255,255,0.45); margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 10px;
 }
+
 .legacy-number {
-  font-family: var(--font-display); font-weight: 300;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(3rem, 7vw, 5.5rem);
-  color: #fff; letter-spacing: -0.02em; line-height: 1; margin-bottom: 10px;
+  color: #FFFFFF;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
+
 .legacy-body {
-  font-size: 0.94rem; color: rgba(255,255,255,0.6);
-  line-height: 1.75; max-width: 500px; margin: 22px auto 0;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+  max-width: 540px;
+  margin: 22px auto 0;
 }
 
 /* ============================================================
@@ -346,10 +1197,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--color-sage-deep); margin-bottom: 14px;
 }
 .buyers-heading {
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 600;
   font-size: clamp(1.5rem, 2.8vw, 2.2rem);
   color: var(--color-ink); line-height: 1.22;
   max-width: 600px; margin: 0 auto;
+  letter-spacing: -0.02em;
 }
 .buyers-slider {
   overflow: hidden;
@@ -469,17 +1321,30 @@ ul { list-style: none; margin: 0; padding: 0; }
    RESPONSIVE — 900px
    ============================================================ */
 @media (max-width: 900px) {
+  .team-approach-section { padding: 72px 0 80px; }
+  .team-approach-inner { gap: 36px; }
+  .team-approach-row-header { grid-template-columns: 1fr; gap: 24px; align-items: flex-start; }
+  .team-photo-frame { aspect-ratio: 16 / 10; border-radius: 18px; }
+
   .split-inner { grid-template-columns: 1fr; gap: 44px; }
   .split-img--portrait { max-width: 100%; justify-self: auto; order: -1; }
   .split-img--landscape { max-width: 100%; }
   .split-img--end { order: -1; }
 
-  .focus-grid { grid-template-columns: 1fr; gap: 0; border-radius: 14px; }
-  .focus-card { padding: 36px 32px; border-bottom: 1px solid var(--color-line); }
-  .focus-card:last-child { border-bottom: none; }
+  .focus-grid { grid-template-columns: 1fr; gap: 20px; }
+  .focus-card { padding: 36px 30px; }
 
   .split-section { padding: 72px 0 80px; }
+  .founder-section { padding: 72px 0 80px; }
+  .scale-section { padding: 72px 0 80px; }
+  .scale-header-wrap { flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 32px; }
+  .scale-slide { flex: 0 0 340px; }
+  .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+  .founder-visual { order: -1; max-width: 420px; margin: 0 auto; width: 100%; }
+  .founder-portrait-accent { right: -10px; bottom: -12px; left: 10px; }
   .opening { padding: 72px 0 80px; }
+  .opening-layout { grid-template-columns: 1fr; gap: 32px; }
+  .opening-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .focus { padding: 72px 0 80px; }
   .legacy { padding: 64px 0; }
   .buyers { padding: 72px 0 80px; }
@@ -542,6 +1407,12 @@ ul { list-style: none; margin: 0; padding: 0; }
   .about-hero { min-height: 440px; }
   .about-hero-body { padding: calc(var(--nav-height) + 40px) var(--container-pad) 56px; }
   .split-section { padding: 60px 0 68px; }
+  .founder-section { padding: 60px 0 68px; }
+  .scale-section { padding: 60px 0 68px; }
+  .scale-heading { font-size: 26px !important; }
+  .founder-quote { font-size: 26px !important; line-height: 1.3 !important; }
+  .founder-name { font-size: 18px !important; }
+  .founder-ms-val { font-size: 18px !important; }
   .opening { padding: 60px 0 68px; }
   .focus { padding: 60px 0 68px; }
   .legacy { padding: 56px 0; }
@@ -556,6 +1427,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   /* USER REQUESTED MOBILE OVERRIDES */
   .about-hero, .cap-hero, .fabrics-hero, .cert-hero { min-height: 380px !important; }
   .hero-heading { font-size: 36px !important; }
+  .opening-cards-grid { grid-template-columns: 1fr; gap: 16px; }
+  .opening-heading { font-size: 26px !important; margin-bottom: 36px; }
   .about-hero-heading, .cap-hero-heading, .fabrics-hero-heading, .cert-hero-heading, .certs-intro-heading { font-size: 30px !important; }
   .section-heading, .story-heading, h2 { font-size: 24px !important; }
   .stat-number { font-size: 36px !important; }
@@ -580,7 +1453,19 @@ ul { list-style: none; margin: 0; padding: 0; }
   .about-hero { min-height: 380px; }
   .about-hero-body { padding: calc(var(--nav-height) + 28px) var(--container-pad) 44px; }
   .split-section { padding: 48px 0 56px; }
+  .founder-section { padding: 48px 0 56px; }
+  .scale-section { padding: 48px 0 56px; }
+  .scale-slide { flex: 0 0 84vw; }
+  .scale-slide-caption { padding: 16px 18px; }
+  .scale-nav-btn { width: 42px; height: 42px; }
+  .founder-milestones { flex-direction: column; align-items: flex-start; gap: 14px; padding: 16px; }
+  .founder-milestone-divider { display: none; }
+  .founder-card-badge { bottom: 14px; left: 14px; padding: 10px 14px; }
+  .founder-portrait-accent { display: none; }
   .opening { padding: 48px 0 56px; }
+  .opening-card { padding: 26px 20px; }
+  .opening-card-icon { margin-bottom: 24px; }
+  .opening-card-num { font-size: 32px !important; margin-bottom: 10px; }
   .focus { padding: 48px 0 56px; }
   .legacy { padding: 48px 0; }
   .buyers { padding: 48px 0 56px; }
@@ -630,7 +1515,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   <!-- ABOUT HERO -->
   <section class="about-hero" aria-label="About Aayushi Fab">
     <div class="about-hero-media">
-      <img src="about-us.webp" alt="Aayushi Fab manufacturing facility and team in Surat, India" width="1600" height="900" />
+      <img src="assets/images/about-us-hero.webp" alt="Aayushi Fab textile master examining fabrics in Surat, India" width="1600" height="900" />
       <div class="about-hero-overlay" aria-hidden="true"></div>
     </div>
     <div class="about-hero-body">
@@ -640,51 +1525,216 @@ ul { list-style: none; margin: 0; padding: 0; }
   </section>
 
 
-  <!-- OPENING STATEMENT -->
+  <!-- OPENING STATEMENT — Split Layout with Stat Cards -->
   <section class="opening" aria-labelledby="opening-heading">
     <div class="section-inner">
-      <h2 class="opening-heading" id="opening-heading">We build products that let fashion brands move faster, <span class="text-sage">greener</span>, and with greater confidence.</h2>
-      <p class="opening-sub">From yarns to finished fabric &mdash; every process runs in-house at our Surat facility, keeping quality tight and lead times short for buyers worldwide.</p>
-    </div>
-  </section>
-
-
-  <!-- LEADERSHIP -->
-  <section class="split-section split-section--soft" aria-labelledby="leadership-heading">
-    <div class="split-inner">
-      <div>
-        <p class="section-eyebrow">Our Roots</p>
-        <h2 class="section-heading" id="leadership-heading">From Kolkata, 1948.<br>Built on <span class="text-sage">trust</span>.</h2>
-        <p class="section-sub" style="margin-bottom:16px;">What began as Gourishankar Tulsiram Trading Company in Kolkata has grown, under the stewardship of CEO Mr. Ashok Agarwal, into one of India's trusted sustainable polyester fabric manufacturers.</p>
-        <p class="section-sub">His vision &mdash; to marry craftsmanship with conscientious manufacturing &mdash; remains the compass for every decision we make.</p>
-        <p class="leadership-caption">Mr. Ashok Agarwal &mdash; CEO, Aayushi Fab</p>
-      </div>
-      <div class="split-img split-img--portrait">
-        <img src="ceo_sample.jpg" alt="Mr. Ashok Agarwal — CEO, Aayushi Fab" width="420" height="560" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
-      </div>
-    </div>
-  </section>
-
-
-  <!-- SCALE & OPERATIONS -->
-  <section class="split-section split-section--white" aria-labelledby="scale-heading">
-    <div class="split-inner">
-      <div class="split-img split-img--landscape">
-        <img src="our_scale.jpg" alt="Aayushi Fab factory staff and manufacturing floor" width="800" height="600" style="width:100%;height:100%;object-fit:cover;display:block;" />
-      </div>
-      <div>
-        <p class="section-eyebrow">Our Scale</p>
-        <h2 class="section-heading" id="scale-heading">150+ people.<br>Every process, <span class="text-sage">in-house</span>.</h2>
-        <p class="section-sub" style="max-width:480px;margin-bottom:28px;">Our team of 150+ professionals operates across the full textile value chain &mdash; from texturising yarns and knitting and weaving raw fabric, to digital printing, foil printing, and embroideries &mdash; all under one roof in Surat, India.</p>
-        <div class="scale-tags">
-          <span class="scale-tag">Textured Yarns</span>
-          <span class="scale-tag">Knitting</span>
-          <span class="scale-tag">Weaving</span>
-          <span class="scale-tag">Digital Printing</span>
-          <span class="scale-tag">Foil Printing</span>
-          <span class="scale-tag">Embroideries</span>
+      <div class="opening-layout">
+        <div class="opening-badge-col">
+          <p class="opening-eyebrow">Our Purpose</p>
+        </div>
+        <div class="opening-content-col">
+          <h2 class="opening-heading" id="opening-heading">
+            We build products that let fashion brands move faster, <span class="text-sage">greener</span>, and with greater confidence.
+          </h2>
+          <div class="opening-cards-grid">
+            <div class="opening-card">
+              <div class="opening-card-icon">
+                <i data-lucide="file-text"></i>
+              </div>
+              <p class="opening-card-num">150+</p>
+              <p class="opening-card-desc">Specialized in-house technicians &amp; craftsmen operating in Surat.</p>
+            </div>
+            <div class="opening-card">
+              <div class="opening-card-icon">
+                <i data-lucide="user"></i>
+              </div>
+              <p class="opening-card-num">90%+</p>
+              <p class="opening-card-desc">Strong client retention through trusted, long-term brand partnerships.</p>
+            </div>
+            <div class="opening-card">
+              <div class="opening-card-icon">
+                <i data-lucide="file-plus"></i>
+              </div>
+              <p class="opening-card-num">75+</p>
+              <p class="opening-card-desc">Years supporting global fashion leaders and retail apparel groups.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- FOUNDER & LEADERSHIP -->
+  <section class="founder-section" aria-labelledby="founder-quote-heading">
+    <div class="founder-inner">
+      
+      <!-- Left: Story & Executive Statement -->
+      <div class="founder-content">
+        <blockquote class="founder-quote-wrap">
+          <div class="founder-quote-mark" aria-hidden="true">&ldquo;</div>
+          <h2 class="founder-quote" id="founder-quote-heading">
+            Marrying craftsmanship with conscientious manufacturing has been our compass since 1948.
+          </h2>
+        </blockquote>
+
+        <div class="founder-narrative">
+          <p>
+            What began as Gourishankar Tulsiram Trading Company in Kolkata has grown, under the visionary stewardship of CEO Mr. Ashok Agarwal, into one of India&rsquo;s trusted sustainable polyester fabric manufacturers.
+          </p>
+          <p>
+            From our founding days in Kolkata to our state-of-the-art integrated production facilities in Surat, our philosophy remains unwavering: honor generational craftsmanship, invest in clean manufacturing, and treat every client brief with personal accountability.
+          </p>
+        </div>
+
+        <!-- Founder Signature & Credentials Lockup -->
+        <div class="founder-signoff">
+          <div class="founder-name-block">
+            <h3 class="founder-name">Mr. Ashok Agarwal</h3>
+            <p class="founder-title">Chief Executive Officer, Aayushi Fab</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Framed Executive Portrait -->
+      <div class="founder-visual">
+        <div class="founder-portrait-frame">
+          <div class="founder-portrait-accent" aria-hidden="true"></div>
+          <div class="founder-portrait-img-wrap">
+            <img 
+              src="assets/images/ceo_sample.jpg" 
+              alt="Mr. Ashok Agarwal — CEO, Aayushi Fab" 
+              width="500" 
+              height="640" 
+              class="founder-portrait-img" 
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SCALE & OPERATIONS (Interactive Facility Slider) -->
+  <section class="scale-section" aria-labelledby="scale-heading">
+    <div class="scale-inner">
+      
+      <!-- Section Header with Slider Navigation Controls -->
+      <div class="scale-header-wrap">
+        <div class="scale-header-content">
+          <p class="scale-eyebrow">Our Scale</p>
+          <h2 class="scale-heading" id="scale-heading">
+            150+ professionals. One integrated campus. Zero external bottlenecks.
+          </h2>
+          <p class="scale-intro-sub">
+            From yarn texturising and weaving to digital printing and automated embroideries, explore our vertically integrated manufacturing facility in Surat, India.
+          </p>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="scale-nav-controls" aria-label="Facility slider navigation">
+          <button class="scale-nav-btn" id="scale-slider-prev" aria-label="Previous facility photo">
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button class="scale-nav-btn" id="scale-slider-next" aria-label="Next facility photo">
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Slider Track -->
+      <div class="scale-slider-wrap">
+        <div class="scale-slider-track" id="scale-slider-track" tabindex="0" role="region" aria-label="Aayushi Fab Facility Photo Gallery">
+          
+          <!-- Slide 1: Knitting Machinery & Yarn Creels -->
+          <div class="scale-slide">
+            <div class="scale-slide-img-box">
+              <img 
+                src="assets/images/our-scale-1.webp" 
+                alt="Aayushi Fab large-scale circular knitting plant and multi-spool yarn creels" 
+                width="800" 
+                height="550" 
+                class="scale-slide-img" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 2: Multi-Row Embroidery Hall -->
+          <div class="scale-slide">
+            <div class="scale-slide-img-box">
+              <img 
+                src="assets/images/our-scale-2.webp" 
+                alt="Large multi-row computerized embroidery production hall at Aayushi Fab" 
+                width="800" 
+                height="550" 
+                class="scale-slide-img" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 3: Textile Processing & Finishing Line -->
+          <div class="scale-slide">
+            <div class="scale-slide-img-box">
+              <img 
+                src="assets/images/our-scale-3.webp" 
+                alt="Technicians operating continuous textile printing and finishing machinery" 
+                width="800" 
+                height="550" 
+                class="scale-slide-img" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 4: Central Logistics & Warehouse Floor -->
+          <div class="scale-slide">
+            <div class="scale-slide-img-box">
+              <img 
+                src="assets/images/our-scale-4.webp" 
+                alt="Aayushi Fab high-capacity bulk fabric storage warehouse and shipping bay" 
+                width="800" 
+                height="550" 
+                class="scale-slide-img" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 5: Corporate Reception & Executive Suite -->
+          <div class="scale-slide">
+            <div class="scale-slide-img-box">
+              <img 
+                src="assets/images/our-scale-5.webp" 
+                alt="Modern corporate reception and meeting suites at Aayushi Fab Surat campus" 
+                width="800" 
+                height="550" 
+                class="scale-slide-img" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 6: Quality Lab & Swatch Archives -->
+          <div class="scale-slide">
+            <div class="scale-slide-img-box">
+              <img 
+                src="assets/images/our-scale-6.webp" 
+                alt="Fabric sampling room, color library, and swatch archive workstations" 
+                width="800" 
+                height="550" 
+                class="scale-slide-img" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -723,24 +1773,112 @@ ul { list-style: none; margin: 0; padding: 0; }
   </section>
 
 
-  <!-- FAMILY BUSINESS CLOSING -->
-  <section class="split-section split-section--white" aria-labelledby="family-heading">
-    <div class="split-inner">
-      <div>
-        <p class="section-eyebrow">Our Approach</p>
-        <h2 class="section-heading" id="family-heading">Family-run.<br><span class="text-sage">Personally invested</span><br>in every order.</h2>
-        <p class="section-sub" style="margin-bottom:36px;">As a family-run business, we bring a level of personal attention to each customer&rsquo;s textile requirements that larger, impersonal manufacturers simply can&rsquo;t match. Your brief is treated as our brief.</p>
-        <a href="contact.html" class="btn-outline-dark">Start a Conversation</a>
+  <!-- OUR APPROACH & TEAM SECTION (2-Row Layout) -->
+  <section class="team-approach-section" aria-labelledby="team-approach-heading">
+    <div class="team-approach-inner">
+      
+      <!-- Row 1: Two Columns (Left: Eyebrow + Heading, Right: Justified Description) -->
+      <div class="team-approach-row-header">
+        <div class="team-approach-header-col-left">
+          <p class="team-approach-eyebrow">Our Team &amp; Approach</p>
+          <h2 class="team-approach-heading" id="team-approach-heading">
+            Family-run leadership.<br>
+            <span class="text-sage">Personally invested</span> in every metre.
+          </h2>
+        </div>
+        <div class="team-approach-header-col-right">
+          <p class="team-approach-desc">
+            As a family-run business, we bring a level of personal attention to each customer&rsquo;s textile requirements that larger, impersonal manufacturers simply cannot match. Unlike corporate conglomerate mills where your brief shifts through layers of detached management, our promoters and senior technical leads stay directly involved from initial yarn selection and sample development to bulk processing and global export dispatch.
+          </p>
+        </div>
       </div>
-      <div class="split-img split-img--end">
-        <img src="our-approach.jpg" alt="The Aayushi Fab family and team approach" width="600" height="700" style="width:100%;height:100%;object-fit:cover;display:block;" />
+
+      <!-- Row 2: Team Interactive Slider -->
+      <div class="team-approach-row-media">
+        <div class="team-slider-container" id="team-slider">
+          <button class="team-slider-nav-btn team-slider-nav-btn--prev" id="team-slider-prev" aria-label="Previous slide">
+            <i data-lucide="chevron-left"></i>
+          </button>
+          
+          <div class="team-slider-viewport">
+            <div class="team-slider-track" id="team-slider-track">
+              <!-- Slide 0: worker-1 -->
+              <div class="team-slide" data-index="0">
+                <div class="team-slide-card">
+                  <img src="assets/images/worker-1.webp" alt="Aayushi Fab craftsman inspecting fabrics" width="860" height="484" loading="lazy">
+                </div>
+              </div>
+              <!-- Slide 1: team-1 -->
+              <div class="team-slide is-active" data-index="1">
+                <div class="team-slide-card">
+                  <img src="assets/images/team-1.webp" alt="Aayushi Fab team at work" width="860" height="484" loading="eager">
+                </div>
+              </div>
+              <!-- Slide 2: team-2 -->
+              <div class="team-slide" data-index="2">
+                <div class="team-slide-card">
+                  <img src="assets/images/team-2.webp" alt="Aayushi Fab textile operations" width="860" height="484" loading="lazy">
+                </div>
+              </div>
+              <!-- Slide 3: team-3 -->
+              <div class="team-slide" data-index="3">
+                <div class="team-slide-card">
+                  <img src="assets/images/team-3.webp" alt="Aayushi Fab quality control" width="860" height="484" loading="lazy">
+                </div>
+              </div>
+              <!-- Slide 4: team-4 -->
+              <div class="team-slide" data-index="4">
+                <div class="team-slide-card">
+                  <img src="assets/images/team-4.webp" alt="Aayushi Fab manufacturing technicians" width="860" height="484" loading="lazy">
+                </div>
+              </div>
+              <!-- Slide 5: team-5 -->
+              <div class="team-slide" data-index="5">
+                <div class="team-slide-card">
+                  <img src="assets/images/team-5.webp" alt="Aayushi Fab weaving craftsmanship" width="860" height="484" loading="lazy">
+                </div>
+              </div>
+              <!-- Slide 6: team-6 -->
+              <div class="team-slide" data-index="6">
+                <div class="team-slide-card">
+                  <img src="assets/images/team-6.webp" alt="Aayushi Fab leadership and textile craft" width="860" height="484" loading="lazy">
+                </div>
+              </div>
+              <!-- Slide 7: team-7 -->
+              <div class="team-slide" data-index="7">
+                <div class="team-slide-card">
+                  <img src="assets/images/team-7.webp" alt="Aayushi Fab production specialists" width="860" height="484" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="team-slider-nav-btn team-slider-nav-btn--next" id="team-slider-next" aria-label="Next slide">
+            <i data-lucide="chevron-right"></i>
+          </button>
+
+          <!-- Pagination Dots -->
+          <div class="team-slider-pagination" id="team-slider-dots" role="tablist" aria-label="Team slider navigation">
+            <button class="team-slider-dot" data-index="0" aria-label="Slide 1"></button>
+            <button class="team-slider-dot is-active" data-index="1" aria-label="Slide 2"></button>
+            <button class="team-slider-dot" data-index="2" aria-label="Slide 3"></button>
+            <button class="team-slider-dot" data-index="3" aria-label="Slide 4"></button>
+            <button class="team-slider-dot" data-index="4" aria-label="Slide 5"></button>
+            <button class="team-slider-dot" data-index="5" aria-label="Slide 6"></button>
+            <button class="team-slider-dot" data-index="6" aria-label="Slide 7"></button>
+            <button class="team-slider-dot" data-index="7" aria-label="Slide 8"></button>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
 
   <!-- LEGACY STRIP (echoes stats banner) -->
   <section class="legacy" aria-label="75 plus years of textile heritage">
+    <div class="legacy-bg" aria-hidden="true"></div>
+    <div class="legacy-overlay" aria-hidden="true"></div>
     <div class="section-inner">
       <p class="legacy-label">Established 1948</p>
       <p class="legacy-number">75<span style="font-size:0.5em;letter-spacing:0;vertical-align:middle;">+</span></p>
@@ -760,34 +1898,34 @@ ul { list-style: none; margin: 0; padding: 0; }
       <div class="buyers-slider">
         <div class="buyers-track">
           <!-- First Set -->
-          <div class="buyer-logo"><img src="inditex.png" alt="Inditex" /></div>
-          <div class="buyer-logo"><img src="next.png" alt="Next" /></div>
-          <div class="buyer-logo"><img src="s oliver.svg" alt="S.Oliver" /></div>
-          <div class="buyer-logo"><img src="h&m kids.jpg" alt="H&M Kids" /></div>
-          <div class="buyer-logo"><img src="riverisland.png" alt="River Island" /></div>
-          <div class="buyer-logo"><img src="walmart.webp" alt="Walmart" /></div>
-          <div class="buyer-logo"><img src="new look.png" alt="New Look" /></div>
-          <div class="buyer-logo"><img src="topshop.png" alt="Topshop" /></div>
-          <div class="buyer-logo"><img src="monsoon accessorize.jpg" alt="Monsoon Accessorize" /></div>
-          <div class="buyer-logo"><img src="kmart.webp" alt="Kmart" /></div>
-          <div class="buyer-logo"><img src="vero moda.png" alt="Vero Moda" /></div>
-          <div class="buyer-logo"><img src="target.png" alt="Target" /></div>
-          <div class="buyer-logo"><img src="ca.png" alt="C&A" /></div>
+          <div class="buyer-logo"><img src="assets/logos/inditex.png" alt="Inditex" /></div>
+          <div class="buyer-logo"><img src="assets/logos/next.png" alt="Next" /></div>
+          <div class="buyer-logo"><img src="assets/logos/s oliver.svg" alt="S.Oliver" /></div>
+          <div class="buyer-logo"><img src="assets/logos/h&m kids.jpg" alt="H&M Kids" /></div>
+          <div class="buyer-logo"><img src="assets/logos/riverisland.png" alt="River Island" /></div>
+          <div class="buyer-logo"><img src="assets/logos/walmart.webp" alt="Walmart" /></div>
+          <div class="buyer-logo"><img src="assets/logos/new look.png" alt="New Look" /></div>
+          <div class="buyer-logo"><img src="assets/logos/topshop.png" alt="Topshop" /></div>
+          <div class="buyer-logo"><img src="assets/logos/monsoon accessorize.jpg" alt="Monsoon Accessorize" /></div>
+          <div class="buyer-logo"><img src="assets/logos/kmart.webp" alt="Kmart" /></div>
+          <div class="buyer-logo"><img src="assets/logos/vero moda.png" alt="Vero Moda" /></div>
+          <div class="buyer-logo"><img src="assets/logos/target.png" alt="Target" /></div>
+          <div class="buyer-logo"><img src="assets/logos/ca.png" alt="C&A" /></div>
 
           <!-- Duplicate Set for infinite scroll -->
-          <div class="buyer-logo"><img src="inditex.png" alt="Inditex" /></div>
-          <div class="buyer-logo"><img src="next.png" alt="Next" /></div>
-          <div class="buyer-logo"><img src="s oliver.svg" alt="S.Oliver" /></div>
-          <div class="buyer-logo"><img src="h&m kids.jpg" alt="H&M Kids" /></div>
-          <div class="buyer-logo"><img src="riverisland.png" alt="River Island" /></div>
-          <div class="buyer-logo"><img src="walmart.webp" alt="Walmart" /></div>
-          <div class="buyer-logo"><img src="new look.png" alt="New Look" /></div>
-          <div class="buyer-logo"><img src="topshop.png" alt="Topshop" /></div>
-          <div class="buyer-logo"><img src="monsoon accessorize.jpg" alt="Monsoon Accessorize" /></div>
-          <div class="buyer-logo"><img src="kmart.webp" alt="Kmart" /></div>
-          <div class="buyer-logo"><img src="vero moda.png" alt="Vero Moda" /></div>
-          <div class="buyer-logo"><img src="target.png" alt="Target" /></div>
-          <div class="buyer-logo"><img src="ca.png" alt="C&A" /></div>
+          <div class="buyer-logo"><img src="assets/logos/inditex.png" alt="Inditex" /></div>
+          <div class="buyer-logo"><img src="assets/logos/next.png" alt="Next" /></div>
+          <div class="buyer-logo"><img src="assets/logos/s oliver.svg" alt="S.Oliver" /></div>
+          <div class="buyer-logo"><img src="assets/logos/h&m kids.jpg" alt="H&M Kids" /></div>
+          <div class="buyer-logo"><img src="assets/logos/riverisland.png" alt="River Island" /></div>
+          <div class="buyer-logo"><img src="assets/logos/walmart.webp" alt="Walmart" /></div>
+          <div class="buyer-logo"><img src="assets/logos/new look.png" alt="New Look" /></div>
+          <div class="buyer-logo"><img src="assets/logos/topshop.png" alt="Topshop" /></div>
+          <div class="buyer-logo"><img src="assets/logos/monsoon accessorize.jpg" alt="Monsoon Accessorize" /></div>
+          <div class="buyer-logo"><img src="assets/logos/kmart.webp" alt="Kmart" /></div>
+          <div class="buyer-logo"><img src="assets/logos/vero moda.png" alt="Vero Moda" /></div>
+          <div class="buyer-logo"><img src="assets/logos/target.png" alt="Target" /></div>
+          <div class="buyer-logo"><img src="assets/logos/ca.png" alt="C&A" /></div>
         </div>
       </div>
     </div>
@@ -889,6 +2027,118 @@ mainNav.querySelectorAll('a').forEach(link => {
     navToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+// Our Scale facility slider navigation
+const scaleTrack = document.getElementById('scale-slider-track');
+const scalePrev = document.getElementById('scale-slider-prev');
+const scaleNext = document.getElementById('scale-slider-next');
+if (scaleTrack && scalePrev && scaleNext) {
+  scalePrev.addEventListener('click', () => {
+    scaleTrack.scrollBy({ left: -440, behavior: 'smooth' });
+  });
+  scaleNext.addEventListener('click', () => {
+    scaleTrack.scrollBy({ left: 440, behavior: 'smooth' });
+  });
+}
+
+// Our Team & Approach Interactive Slider with Active Blur Effect
+(function initTeamSlider() {
+  const container = document.getElementById('team-slider');
+  const track = document.getElementById('team-slider-track');
+  const prevBtn = document.getElementById('team-slider-prev');
+  const nextBtn = document.getElementById('team-slider-next');
+  const dotsContainer = document.getElementById('team-slider-dots');
+  
+  if (!container || !track) return;
+
+  const slides = Array.from(track.querySelectorAll('.team-slide'));
+  const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.team-slider-dot')) : [];
+  const totalSlides = slides.length;
+  let currentIndex = 1;
+
+  function updateSlider(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === currentIndex);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === currentIndex);
+      dot.setAttribute('aria-selected', String(i === currentIndex));
+    });
+
+    // Center the active slide in the viewport
+    const activeSlide = slides[currentIndex];
+    const viewport = track.parentElement;
+    if (activeSlide && viewport) {
+      const viewportCenter = viewport.offsetWidth / 2;
+      const slideCenter = activeSlide.offsetLeft + (activeSlide.offsetWidth / 2);
+      const targetTranslate = viewportCenter - slideCenter;
+      track.style.transform = `translateX(${targetTranslate}px)`;
+    }
+  }
+
+  // Event Listeners
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      updateSlider(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      updateSlider(currentIndex + 1);
+    });
+  }
+
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => {
+      if (currentIndex !== i) {
+        updateSlider(i);
+      }
+    });
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      updateSlider(i);
+    });
+  });
+
+  // Touch / Swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        updateSlider(currentIndex + 1);
+      } else {
+        updateSlider(currentIndex - 1);
+      }
+    }
+  }, { passive: true });
+
+  // Handle window resizing to keep center aligned
+  window.addEventListener('resize', () => {
+    updateSlider(currentIndex);
+  });
+
+  // Initialize
+  // Delay briefly to ensure DOM layout / measurements are computed accurately
+  requestAnimationFrame(() => {
+    updateSlider(1);
+  });
+})();
 </script>
 
 </body>
